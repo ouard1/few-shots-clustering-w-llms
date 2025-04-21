@@ -1,0 +1,14 @@
+{
+  "method": "keyphrase_clustering",
+  "n_clusters": 77,
+  "train_metrics": {
+    "accuracy": 0.204,
+    "nmi": 0.6216373344107501,
+    "ari": 0.18140527777368845
+  },
+  "test_metrics": {
+    "accuracy": 0.332,
+    "nmi": 0.6439495304002741,
+    "ari": 0.27293570730486966
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "method": "kmeans_baseline",
+  "n_clusters": 7,
+  "train_metrics": {
+    "accuracy": 0.2,
+    "nmi": 0.0,
+    "ari": 0.0
+  },
+  "test_metrics": {
+    "accuracy": 0.4,
+    "nmi": 0.0,
+    "ari": 0.0
+  }
+}

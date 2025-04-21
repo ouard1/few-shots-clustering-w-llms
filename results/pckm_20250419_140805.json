@@ -1,0 +1,16 @@
+{
+  "method": "pckm",
+  "n_clusters": 77,
+  "n_constraints": 1000,
+  "constraint_weight": 1.0,
+  "train_metrics": {
+    "accuracy": 0.204,
+    "nmi": 0.621894902228025,
+    "ari": 0.17766002795416344
+  },
+  "test_metrics": {
+    "accuracy": 0.308,
+    "nmi": 0.6227374723271814,
+    "ari": 0.25203403420534604
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "method": "llm_correction",
+  "n_clusters": 77,
+  "n_corrections": 500,
+  "original_metrics": {
+    "accuracy": 0.8051948051948052,
+    "nmi": 0.9366253645126663,
+    "ari": 0.5145203037744257
+  },
+  "corrected_metrics": {
+    "accuracy": 0.8051948051948052,
+    "nmi": 0.9403055400498597,
+    "ari": 0.5273282809168197
+  },
+  "improvement": {
+    "accuracy": 0.0,
+    "nmi": 0.003680175537193353,
+    "ari": 0.012807977142394011
+  }
+}

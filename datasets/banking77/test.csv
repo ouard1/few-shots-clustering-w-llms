@@ -1,0 +1,78 @@
+text,category
+I found a direct debit I would like to dispute,direct_debit_payment_not_recognised
+I got a fee when paying with my card,card_payment_fee_charged
+I did a money transfer to my account and it is not showing there.,balance_not_updated_after_bank_transfer
+Where is my pin? I don't have it yet,get_physical_card
+Can I cancel an order if I haven't received the item yet? And how can I get my money back? Please help. Thanks.,request_refund
+"When I tried to access my cash, I wasn't allowed!",declined_cash_withdrawal
+"Help!  I fear that my card was stolen,",lost_or_stolen_card
+An ATM machine didn't give me back my card.,card_swallowed
+I would like to know where the funds are at.,verify_source_of_funds
+i need help. I updated my balance with a check yesterday and Im not seeing it. Can you look at my account to see what went wrong?,balance_not_updated_after_cheque_or_cash_deposit
+The app declined my top up. What did I do wrong?,top_up_reverted
+Is there a fee to make a transfer?,top_up_by_bank_transfer_charge
+"I have never been charged for making an ATM cash withdrawal before, but I am now being charged a fee to withdraw cash. What happened?",cash_withdrawal_charge
+What do I do now that I can't use this card?,card_not_working
+Can I have a duplicate second card?,getting_spare_card
+"There are multiple instances where you added a fee to the payment, as well as some where you didn't. Do you have an outline of when a fee will be added?",card_payment_fee_charged
+I found my lost card. Am I still able to use it?,card_linking
+Please tell me what this direct debit in my statement is,direct_debit_payment_not_recognised
+Why was there an extra charge because I used my card to pay?,card_payment_fee_charged
+"If I want to get an account for my daughter, can I do that?",age_limit
+"I deposited a check yesterday to up my account balance, but that deposit hasn't shown up yet.  It's been a day already!",balance_not_updated_after_cheque_or_cash_deposit
+I am not sure where my phone is.,lost_or_stolen_phone
+Why have I been charged an extra £1?,extra_charge_on_statement
+Please tell me where I can update my details since I moved.,edit_personal_details
+Do physical cards cost money?,order_physical_card
+I have cancelled payments to this card.,reverted_card_payment?
+What are the reasons for a declined transfer?,declined_transfer
+Does it cost anything to buy something from another country? Like is there going to be hidden transfer fees or currency conversion fees?,transfer_fee_charged
+"When I tried to transfer funds to my friend today I was unable to do so, why?",failed_transfer
+I still haven't gotten my new card.  When will it get here?,card_arrival
+on my statement there is a payment that I don't recognise,card_payment_not_recognised
+How long does it take for a refund to appear?,Refund_not_showing_up
+I am not able to verify my id. Why?,unable_to_verify_identity
+"Hello, I have a question concerning an unfamiliar fee that I notice on my account. I see that you guys charge for ATM withdrawal. Never notice this fee until now. Can you please explain?",cash_withdrawal_charge
+Can I order a card please?,order_physical_card
+It is urgency. Please freeze my card now. As someone in some odd remote town has withdrawn some money by using my card. As i did not withdraw any money.,cash_withdrawal_not_recognised
+Is there a reason my payments are pending?,pending_card_payment
+My physical card is not working,card_not_working
+Please tell me the types of currency I can hold.,fiat_currency_support
+"I desperately need to top-up my card, so why is it being declined? Can you solve this for me? I need to use my card immediately!",top_up_failed
+I thought it was free to make a withdrawal. So how much does it cost now?,cash_withdrawal_charge
+There has been a charge pending on my account statement that I can't figue out it's for a dollar.,extra_charge_on_statement
+"The card I thought was lost was just in my jacket, so can I reactivate it since I found it this morning?",card_linking
+Can you please assist me in completing a transfer? I'm trying and I keep getting an error. I'm trying to purchase a flat and pay the initial mortgage payment. All I keep getting is an error. Can you find out what's happening here?,failed_transfer
+Please help me regarding a direct debit in the app that I don't recognize.,direct_debit_payment_not_recognised
+Why am I being charged the wrong currency exchange when I purchased something abroad?,card_payment_wrong_exchange_rate
+from where are coming your exchange rates?,exchange_rate
+Is there a charge for exchanging foreign currency?,exchange_charge
+I need a refund for something I bought.,request_refund
+Why hasn't my friend received the money i sent them yet?,transfer_not_received_by_recipient
+My card's expiration date is close.,card_about_to_expire
+The cheque I deposited isn't showing in my account,balance_not_updated_after_cheque_or_cash_deposit
+I notice there's a pending payment on my card.,pending_card_payment
+Can I use a Visa or Mastercard?,visa_or_mastercard
+"I logged in wrong and am blocked, how do I log in?",pin_blocked
+why didnt my account allow a transfer,beneficiary_not_allowed
+I'm still waiting for my new card.,card_arrival
+What will my exchange rate be?,exchange_rate
+how much do I have to pay for exchange of currency?,exchange_charge
+How do I verify the top up?,verify_top_up
+Why was one of my transfers declined?,declined_transfer
+Why was I charged twice for my item!,transaction_charged_twice
+Can I get more cards just incase?,getting_spare_card
+I have to quickly transfer something to China. How long will it take to arrive there?,transfer_timing
+Why did my top-up not go through?,top_up_reverted
+How many disposable cards per person?,disposable_card_limits
+Where is my cash deposit in my balance?,balance_not_updated_after_cheque_or_cash_deposit
+I haven't received the PIN yet.,get_physical_card
+How do I use disposable cards?,get_disposable_virtual_card
+What is the appropriate age for my child to be able to open an account?,age_limit
+My balance is not what I thought it was following an ATM withdrawal,pending_cash_withdrawal
+I tried to transfer funds to a beneficiary and was denied. Can you tell me why?,beneficiary_not_allowed
+Can I start an account for my kids?,age_limit
+I had a decline on my card. Why?,declined_card_payment
+"I went for a meal in Seattle and paid the bill but I think they charged me twice, the first time they swiped the card I got a notification to say the money had gone out the account but then I added a tip and I think they swiped it all again. Can you refund one of the charges?",transaction_charged_twice
+The wrong account was used during a transaction.,cancel_transfer
+"I need to activate my card, how is that done?",activate_my_card

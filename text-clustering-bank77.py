@@ -18,6 +18,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import euclidean_distances
 
+from create_balanced_dataset import create_banking77_dataset
 
 
 
@@ -41,7 +42,7 @@ def save_results(result_dict, method_name):
     print(f"Results saved to {filename}")
     return filename
     
-def load_banking77_data(train_limit=1000, test_limit=500):
+def load_banking77_data(train_limit=3000, test_limit=500):
     """
     Load Banking77 dataset with pandas for more robust CSV parsing
     """
@@ -62,7 +63,7 @@ def load_banking77_data(train_limit=1000, test_limit=500):
     
     print(f"Loading data from: {data_dir}")
     
-    train_path = os.path.join(data_dir, 'train.csv')
+    train_path = os.path.join(data_dir, 'banking77train.csv')
     try:
         train_df = pd.read_csv(train_path)
     except:
@@ -135,7 +136,6 @@ def embed_texts(texts, model_name="all-MiniLM-L6-v2", use_cache=True):
     model = SentenceTransformer(model_name)
     embeddings = model.encode(texts, show_progress_bar=True)
     
-    # Cache the embeddings
     if use_cache:
         with open(cache_file, 'wb') as f:
             pickle.dump(embeddings, f)
@@ -160,7 +160,6 @@ def calculate_accuracy(y_true, y_pred, n_clusters):
     """
     Calculate clustering accuracy using the Hungarian algorithm
     """
-    # Create contingency matrix
     contingency_matrix = np.zeros((n_clusters, n_clusters))
     for i in range(len(y_true)):
         contingency_matrix[y_true[i], y_pred[i]] += 1
@@ -174,7 +173,6 @@ def calculate_accuracy(y_true, y_pred, n_clusters):
     # Map predictions to true labels
     y_pred_aligned = np.array([cluster_to_label[pred] for pred in y_pred])
     
-    # Calculate accuracy
     accuracy = np.sum(y_pred_aligned == y_true) / len(y_true)
     return accuracy
 
@@ -402,19 +400,16 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
         except json.JSONDecodeError as e:
             print(f"Error loading constraints from cache: {e}")
             print("Cache file appears to be corrupted. Regenerating constraints...")
-            # If cache is corrupted, delete it
+           
             os.remove(cache_file)
     
-    # Get training data
+ 
     train_data = dataset["train"]
     
-    # Print the size of training data to help debug
     print(f"Number of training examples: {len(train_data)}")
     
-    # Prepare the prompt with demonstrations
     system_prompt = """I am trying to cluster online banking queries based on whether they express the same intent. I will provide you with two queries, and I need you to determine if they express the same intent. Answer with 'Yes' if they express the same intent, or 'No' if they express different intents."""
     
-    # Example demonstrations (from different categories)
     demonstrations = [
         {
             "query1": "How do I locate my card?",
@@ -446,23 +441,19 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
     for demo in demonstrations:
         demo_text += f"Query 1: {demo['query1']}\nQuery 2: {demo['query2']}\nSame Intent: {demo['same_intent']}\nExplanation: {demo['explanation']}\n\n"
     
-    # Set random seed for reproducibility
     np.random.seed(42)
     
     # Strategy: Mix of close pairs (likely same intent) and random pairs (likely different intent)
     # This follows the Explore-Consolidate algorithm mentioned in the paper
     
-    # First, embed all training texts
     train_texts = [item["text"] for item in train_data]
     train_labels = [item["label"] for item in train_data]
     
-    # Use cached embeddings if available
     embeddings_file = os.path.join(cache_dir, f"train_embeddings_size{train_size}_for_constraints.pkl")
     if os.path.exists(embeddings_file):
         try:
             with open(embeddings_file, 'rb') as f:
                 cached_embeddings = pickle.load(f)
-            # Verify the embeddings match the current dataset size
             if len(cached_embeddings) != len(train_texts):
                 print(f"Warning: Cached embeddings size ({len(cached_embeddings)}) doesn't match training data size ({len(train_texts)})")
                 print("Regenerating embeddings...")
@@ -485,7 +476,6 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
         except Exception as e:
             print(f"Error saving embeddings to cache: {e}")
     
-    # Verify embeddings shape matches training data
     if len(train_embeddings) != len(train_texts):
         raise ValueError(f"Embeddings shape ({len(train_embeddings)}) doesn't match training data size ({len(train_texts)})")
     
@@ -505,21 +495,19 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
             print("Warning: Not enough data points for finding neighbors")
             break
             
-        closest_indices = np.argsort(distances[i])[1:k_neighbors+1]  # Skip self
+        closest_indices = np.argsort(distances[i])[1:k_neighbors+1]  
         for j in closest_indices:
-            # Double check index is valid
             if i != j and j < len(train_texts):
                 candidate_pairs.append((int(i), int(j), float(distances[i][j])))
     
     # 2. Random pairs (likely different intent)
-    if max_idx > 0:  # Only if we have at least 2 examples
-        for _ in range(min(n_constraints // 2, 1000)):  # Limit to avoid excessive pairs
+    if max_idx > 0:  
+        for _ in range(min(n_constraints // 2, 1000)):  
             i = np.random.randint(0, max_idx + 1)
             j = np.random.randint(0, max_idx + 1)
             if i != j:
                 candidate_pairs.append((int(i), int(j), float(distances[i][j])))
     
-    # Print diagnostic info
     print(f"Generated {len(candidate_pairs)} candidate pairs")
     if len(candidate_pairs) == 0:
         print("Warning: No candidate pairs generated. Check your data.")
@@ -537,7 +525,6 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
     processed_count = 0
     
     for i, (idx1, idx2) in enumerate(tqdm(selected_pairs, desc="Generating constraints")):
-        # Double-check indices are in range
         if idx1 >= len(train_texts) or idx2 >= len(train_texts):
             print(f"Warning: Skipping pair with invalid indices ({idx1}, {idx2}). Max valid index: {len(train_texts)-1}")
             continue
@@ -557,9 +544,7 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
                 temperature=0.1
             )
             
-            # Parse the response
             result = response.choices[0].message.content.strip().lower()
-            
             # Determine constraint type
             if "yes" in result:
                 constraints["must_link"].append((int(idx1), int(idx2)))
@@ -568,22 +553,17 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
             
             processed_count += 1
             
-            # Add a small delay to avoid rate limits
             time.sleep(0.5)
-            
-            # Save intermediate results every 5 constraints or at the end
+    
             if (processed_count % 5 == 0) or (i == len(selected_pairs) - 1):
                 try:
-                    # Create serializable version for saving
                     serializable_constraints = {
                         "must_link": [[int(i), int(j)] for i, j in constraints["must_link"]],
                         "cannot_link": [[int(i), int(j)] for i, j in constraints["cannot_link"]]
                     }
                     
-                    # Test serialization first
                     json_str = json.dumps(serializable_constraints)
                     
-                    # Then save to file
                     with open(cache_file, 'w') as f:
                         f.write(json_str)
                     
@@ -594,14 +574,12 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
         except Exception as e:
             print(f"Error generating constraint for pair ({idx1}, {idx2}): {e}")
     
-    # Create the final serializable version
     try:
         serializable_constraints = {
             "must_link": [[int(i), int(j)] for i, j in constraints["must_link"]],
             "cannot_link": [[int(i), int(j)] for i, j in constraints["cannot_link"]]
         }
         
-        # Save final results
         with open(cache_file, 'w') as f:
             json.dump(serializable_constraints, f, indent=2)
         
@@ -611,7 +589,6 @@ def generate_pairwise_constraints_with_llm(dataset, n_constraints=1000, cache_di
     except Exception as e:
         print(f"Error saving final constraints to cache: {e}")
         
-        # If we can't save to cache, still return the constraints
         return {
             "must_link": [[int(i), int(j)] for i, j in constraints["must_link"]],
             "cannot_link": [[int(i), int(j)] for i, j in constraints["cannot_link"]]
@@ -624,12 +601,11 @@ def pckm_objective(X, centers, ml, cl, w):
     """
     from sklearn.metrics.pairwise import euclidean_distances
     print("calculating pckm objective")
-    # Calculate standard k-means objective
+
     distances = euclidean_distances(X, centers)
     labels = np.argmin(distances, axis=1)
     kmeans_obj = np.sum(np.min(distances, axis=1))
-    
-    # Calculate constraint violation penalty
+
     penalty = 0
     
     # Must-link constraints
@@ -648,7 +624,6 @@ def run_pckm(X, n_clusters, ml_constraints, cl_constraints, w=1.0, max_iter=100)
     """
     Run PCKMeans (Pairwise Constrained K-Means) with robust error handling
     """
-    # Convert constraints to integers and validate
     ml_constraints = [(int(i), int(j)) for i, j in ml_constraints if i < len(X) and j < len(X)]
     cl_constraints = [(int(i), int(j)) for i, j in cl_constraints if i < len(X) and j < len(X)]
     
@@ -669,7 +644,6 @@ def run_pckm(X, n_clusters, ml_constraints, cl_constraints, w=1.0, max_iter=100)
         distances = euclidean_distances(X, centers)
         labels = np.argmin(distances, axis=1)
         
-        # Apply constraints with a limit on iterations
         changed = True
         max_inner_iterations = 100
         inner_iter = 0
@@ -682,7 +656,6 @@ def run_pckm(X, n_clusters, ml_constraints, cl_constraints, w=1.0, max_iter=100)
             # Apply must-link constraints
             for i, j in ml_constraints:
                 if labels[i] != labels[j]:
-                    # Choose the cluster with lower distance
                     if distances[i, labels[i]] < distances[j, labels[j]]:
                         labels[j] = labels[i]
                     else:
@@ -693,11 +666,8 @@ def run_pckm(X, n_clusters, ml_constraints, cl_constraints, w=1.0, max_iter=100)
             # Apply cannot-link constraints
             for i, j in cl_constraints:
                 if labels[i] == labels[j]:
-                    # Find the next best cluster for j
                     dist_j = distances[j].copy()
                     dist_j[labels[j]] = float('inf')
-                    
-                    # If all distances are inf, pick a random cluster
                     if np.all(np.isinf(dist_j)):
                         new_cluster = np.random.choice([c for c in range(n_clusters) if c != labels[j]])
                     else:
@@ -720,20 +690,16 @@ def run_pckm(X, n_clusters, ml_constraints, cl_constraints, w=1.0, max_iter=100)
                 new_centers[k] = np.mean(cluster_points, axis=0)
             else:
                 empty_clusters += 1
-                # If a cluster is empty, reinitialize it
                 new_centers[k] = X[np.random.randint(0, X.shape[0])]
         
-        # Calculate objective
         current_objective = pckm_objective(X, new_centers, ml_constraints, cl_constraints, w)
         print(f"  Objective: {current_objective:.4f}, Empty clusters: {empty_clusters}")
         
-        # Save best result
         if current_objective < best_objective:
             best_objective = current_objective
             best_labels = labels.copy()
             print(f"  New best objective: {best_objective:.4f}")
-        
-        # Check for convergence
+
         center_shift = np.sum(np.sqrt(np.sum((centers - new_centers) ** 2, axis=1)))
         print(f"  Center shift: {center_shift:.6f}")
         centers = new_centers
@@ -742,7 +708,6 @@ def run_pckm(X, n_clusters, ml_constraints, cl_constraints, w=1.0, max_iter=100)
             print(f"Converged after {iteration+1} iterations")
             break
     
-    # Use best labels found
     return best_labels, centers
 def run_pairwise_constraint_clustering(dataset, embeddings, n_clusters=77, n_constraints=1000, constraint_weight=1.0):
     """
@@ -767,18 +732,17 @@ def run_pairwise_constraint_clustering(dataset, embeddings, n_clusters=77, n_con
         w=constraint_weight
     )
     print(f"pckm objective: {pckm_objective}")
-    # Evaluate on training data
+ 
     train_metrics = evaluate_clustering(
         [item["label"] for item in dataset["train"]], 
         train_labels, 
         n_clusters
     )
     print(f"pckm objective: {pckm_objective}")
-    # Predict on test data
+
     distances = euclidean_distances(embeddings["test"], centers)
     test_labels = np.argmin(distances, axis=1)
     
-    # Evaluate on test data
     test_metrics = evaluate_clustering(
         [item["label"] for item in dataset["test"]], 
         test_labels, 
@@ -794,7 +758,6 @@ def run_pairwise_constraint_clustering(dataset, embeddings, n_clusters=77, n_con
         "test_metrics": test_metrics
     }
     
-    # Save results
     save_results(results, "pckm")
     
     return results, centers, train_labels, test_labels
@@ -819,7 +782,6 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
     # System prompt for LLM
     system_prompt = """I am trying to cluster online banking queries based on their intent. I'll provide you with a query and some example queries from a cluster. Tell me if the query belongs to this cluster or not. Answer with 'Yes' if it belongs to the cluster, or 'No' if it doesn't."""
     
-    # Cache for corrections
     corrections_dir = os.path.join(CACHE_DIR, "corrections")
     os.makedirs(corrections_dir, exist_ok=True)
     cache_file = os.path.join(corrections_dir, f"corrections_{n_corrections}.json")
@@ -827,8 +789,8 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
     if os.path.exists(cache_file):
         print(f"Loading corrections from cache: {cache_file}")
         with open(cache_file, 'r') as f:
-            corrected_clusters = json.load(f)
-            corrected_clusters = {int(k): v for k, v in corrected_clusters.items()}
+            corrected_clusters_raw = json.load(f)
+            corrected_clusters = {int(k): v for k, v in corrected_clusters_raw.items()}
     else:
         # Get representative examples for each cluster
         cluster_representatives = {}
@@ -851,14 +813,15 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
         corrected_clusters = {}
         
         for i, idx in enumerate(tqdm(low_confidence_indices, desc="Correcting clusters")):
+         
+            idx = int(idx)
             query = test_texts[idx]
-            current_cluster = test_clusters[idx]
+            current_cluster = int(test_clusters[idx])  
             
             # Get the current cluster's representatives
             current_representatives = cluster_representatives[current_cluster]
             
             if not current_representatives:
-                # Skip if no representatives available
                 corrected_clusters[idx] = current_cluster
                 continue
             
@@ -877,8 +840,7 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
                     ],
                     temperature=0.1
                 )
-                
-                # Parse the response
+            
                 result = response.choices[0].message.content.strip().lower()
                 
                 # If current assignment is correct, keep it
@@ -892,6 +854,7 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
                     
                     # Check each alternative
                     for alt_cluster in alternative_clusters:
+                        alt_cluster = int(alt_cluster)
                         alt_representatives = cluster_representatives[alt_cluster]
                         
                         if not alt_representatives:
@@ -915,34 +878,30 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
                         
                         # If found a better cluster, assign to it
                         if "yes" in alt_result:
-                            corrected_clusters[idx] = int(alt_cluster)
+                            corrected_clusters[idx] = alt_cluster
                             break
                     else:
                         # If no better cluster found, keep the original
                         corrected_clusters[idx] = current_cluster
-                
-                # Add a small delay to avoid rate limits
                 time.sleep(0.5)
                 
-                # Save intermediate results every 20 corrections
                 if (i + 1) % 20 == 0:
+                    serializable_clusters = {int(k): int(v) for k, v in corrected_clusters.items()}
                     with open(cache_file, 'w') as f:
-                        json.dump(corrected_clusters, f)
+                        json.dump(serializable_clusters, f)
                     
             except Exception as e:
                 print(f"Error correcting cluster for point {idx}: {e}")
                 corrected_clusters[idx] = current_cluster
         
-        # Save final results
+        serializable_clusters = {int(k): int(v) for k, v in corrected_clusters.items()}
         with open(cache_file, 'w') as f:
-            json.dump(corrected_clusters, f)
-    
-    # Apply corrections to create final cluster assignments
+            json.dump(serializable_clusters, f)
+
     corrected_test_clusters = test_clusters.copy()
     for idx, cluster in corrected_clusters.items():
         corrected_test_clusters[idx] = cluster
     
-    # Evaluate original and corrected clustering
     original_metrics = evaluate_clustering(
         [item["label"] for item in dataset["test"]], 
         test_clusters, 
@@ -968,53 +927,436 @@ def run_llm_correction(dataset, embeddings, kmeans_model, train_clusters, test_c
         }
     }
     
-    # Save results
+    
     save_results(results, "llm_correction")
     
     return results, corrected_test_clusters
-    
 def main():
-    # Load dataset
-    dataset = load_banking77_data(train_limit=1000, test_limit=500)    
+    models_dir = os.path.join(CACHE_DIR, "models")
+    os.makedirs(models_dir, exist_ok=True)
     
-    # Get embeddings
+    """ Load dataset
+        create_banking77_dataset(
+            input_csv_path="datasets/banking77/train.csv",
+            output_dir="datasets/banking77",
+            train_size=3000,
+            test_size=1000
+        )
+        """
+    dataset = load_banking77_data(train_limit=3000, test_limit=500)    
+    
+    embeddings = get_dataset_embeddings(dataset, model_name="all-MiniLM-L6-v2")
+    kmeans_model_path = os.path.join(models_dir, "kmeans_model.pkl")
+    kmeans_results_path = os.path.join(models_dir, "kmeans_results.pkl")
+    keyphrase_model_path = os.path.join(models_dir, "keyphrase_model.pkl")
+    keyphrase_results_path = os.path.join(models_dir, "keyphrase_results.pkl")
+    pckm_model_path = os.path.join(models_dir, "pckm_model.pkl")
+    pckm_results_path = os.path.join(models_dir, "pckm_results.pkl")
+    
+    # Run or load baseline K-Means
+    if os.path.exists(kmeans_model_path) and os.path.exists(kmeans_results_path):
+        print("Loading K-Means model and results from cache...")
+        with open(kmeans_model_path, 'rb') as f:
+            kmeans_data = pickle.load(f)
+            kmeans_model = kmeans_data['model']
+            train_clusters = kmeans_data['train_clusters']
+            test_clusters = kmeans_data['test_clusters']
+        
+        with open(kmeans_results_path, 'rb') as f:
+            baseline_results = pickle.load(f)
+    else:
+        print("Running K-Means clustering...")
+        baseline_results, kmeans_model, train_clusters, test_clusters = run_kmeans_baseline(
+            dataset, embeddings, n_clusters=77
+        )
+        
+        # Save model and results
+        kmeans_data = {
+            'model': kmeans_model,
+            'train_clusters': train_clusters,
+            'test_clusters': test_clusters
+        }
+        with open(kmeans_model_path, 'wb') as f:
+            pickle.dump(kmeans_data, f)
+        
+        with open(kmeans_results_path, 'wb') as f:
+            pickle.dump(baseline_results, f)
+    
+    print("Baseline results:")
+    print(f"Train - Accuracy: {baseline_results['train_metrics']['accuracy']:.4f}, "
+          f"NMI: {baseline_results['train_metrics']['nmi']:.4f}, "
+          f"ARI: {baseline_results['train_metrics']['ari']:.4f}")
+    print(f"Test - Accuracy: {baseline_results['test_metrics']['accuracy']:.4f}, "
+          f"NMI: {baseline_results['test_metrics']['nmi']:.4f}, "
+          f"ARI: {baseline_results['test_metrics']['ari']:.4f}")
+    
+    # Run or load keyphrase expansion clustering
+    if os.path.exists(keyphrase_model_path) and os.path.exists(keyphrase_results_path):
+        print("Loading Keyphrase Expansion model and results from cache...")
+        with open(keyphrase_model_path, 'rb') as f:
+            keyphrase_data = pickle.load(f)
+            keyphrase_model = keyphrase_data['model']
+            keyphrase_train_clusters = keyphrase_data['train_clusters']
+            keyphrase_test_clusters = keyphrase_data['test_clusters']
+            train_combined = keyphrase_data['train_combined']
+            test_combined = keyphrase_data['test_combined']
+        
+        with open(keyphrase_results_path, 'rb') as f:
+            keyphrase_results = pickle.load(f)
+    else:
+        print("Running Keyphrase Expansion clustering...")
+        keyphrase_results, keyphrase_model, keyphrase_train_clusters, keyphrase_test_clusters, train_combined, test_combined = run_keyphrase_clustering(
+            dataset, embeddings, n_clusters=77
+        )
+        
+        # Save model and results
+        keyphrase_data = {
+            'model': keyphrase_model,
+            'train_clusters': keyphrase_train_clusters,
+            'test_clusters': keyphrase_test_clusters,
+            'train_combined': train_combined,
+            'test_combined': test_combined
+        }
+        with open(keyphrase_model_path, 'wb') as f:
+            pickle.dump(keyphrase_data, f)
+        
+        with open(keyphrase_results_path, 'wb') as f:
+            pickle.dump(keyphrase_results, f)
+    
+    print("\nKeyphrase expansion results:")
+    print(f"Train - Accuracy: {keyphrase_results['train_metrics']['accuracy']:.4f}, "
+          f"NMI: {keyphrase_results['train_metrics']['nmi']:.4f}, "
+          f"ARI: {keyphrase_results['train_metrics']['ari']:.4f}")
+    print(f"Test - Accuracy: {keyphrase_results['test_metrics']['accuracy']:.4f}, "
+          f"NMI: {keyphrase_results['test_metrics']['nmi']:.4f}, "
+          f"ARI: {keyphrase_results['test_metrics']['ari']:.4f}")
+    
+    # Run or load pairwise constraint clustering
+    if os.path.exists(pckm_model_path) and os.path.exists(pckm_results_path):
+        print("Loading PCKMeans model and results from cache...")
+        with open(pckm_model_path, 'rb') as f:
+            pckm_data = pickle.load(f)
+            pckm_centers = pckm_data['centers']
+            pckm_train_clusters = pckm_data['train_clusters']
+            pckm_test_clusters = pckm_data['test_clusters']
+        
+        with open(pckm_results_path, 'rb') as f:
+            pckm_results = pickle.load(f)
+    else:
+        print("Running Pairwise Constraint K-Means clustering...")
+        pckm_results, pckm_centers, pckm_train_clusters, pckm_test_clusters = run_pairwise_constraint_clustering(
+            dataset, embeddings, n_clusters=77, n_constraints=1000
+        )
+        
+        # Save model and results
+        pckm_data = {
+            'centers': pckm_centers,
+            'train_clusters': pckm_train_clusters,
+            'test_clusters': pckm_test_clusters
+        }
+        with open(pckm_model_path, 'wb') as f:
+            pickle.dump(pckm_data, f)
+        
+        with open(pckm_results_path, 'wb') as f:
+            pickle.dump(pckm_results, f)
+    
+    print("\nPairwise constraint clustering results:")
+    print(f"Train - Accuracy: {pckm_results['train_metrics']['accuracy']:.4f}, "
+          f"NMI: {pckm_results['train_metrics']['nmi']:.4f}, "
+          f"ARI: {pckm_results['train_metrics']['ari']:.4f}")
+    print(f"Test - Accuracy: {pckm_results['test_metrics']['accuracy']:.4f}, "
+          f"NMI: {pckm_results['test_metrics']['nmi']:.4f}, "
+          f"ARI: {pckm_results['test_metrics']['ari']:.4f}")
+    
+    # Run LLM correction
+    # Ask which model to use for correction
+    print("\nWhich model would you like to use for LLM correction?")
+    print("1: K-Means Baseline")
+    print("2: Keyphrase Expansion")
+    print("3: Pairwise Constraint K-Means")
+    
+    choice = input("Enter your choice (1-3): ").strip()
+    
+    if choice == '1':
+        print("Running LLM correction on K-Means Baseline model...")
+        correction_results, corrected_test_clusters = run_llm_correction(
+            dataset, embeddings, kmeans_model, train_clusters, test_clusters, 
+            n_clusters=77, n_corrections=500
+        )
+        original_results = baseline_results
+    elif choice == '2':
+        print("Running LLM correction on Keyphrase Expansion model...")
+        correction_results, corrected_test_clusters = run_llm_correction(
+            dataset, {"train": train_combined, "test": test_combined}, 
+            keyphrase_model, keyphrase_train_clusters, keyphrase_test_clusters, 
+            n_clusters=77, n_corrections=500
+        )
+        original_results = keyphrase_results
+    elif choice == '3':
+        # For PCKM, we need to create a KMeans-like model object for compatibility
+        from sklearn.cluster import KMeans
+        pckm_kmeans = KMeans(n_clusters=77)
+        pckm_kmeans.cluster_centers_ = pckm_centers
+        
+        print("Running LLM correction on Pairwise Constraint K-Means model...")
+        correction_results, corrected_test_clusters = run_llm_correction(
+            dataset, embeddings, pckm_kmeans, pckm_train_clusters, pckm_test_clusters, 
+            n_clusters=77, n_corrections=500
+        )
+        original_results = pckm_results
+    else:
+        print("Invalid choice. Skipping LLM correction.")
+        correction_results = None
+        original_results = None
+    
+    if correction_results:
+        print("\nLLM correction results:")
+        print(f"Original - Accuracy: {correction_results['original_metrics']['accuracy']:.4f}, "
+              f"NMI: {correction_results['original_metrics']['nmi']:.4f}, "
+              f"ARI: {correction_results['original_metrics']['ari']:.4f}")
+        print(f"Corrected - Accuracy: {correction_results['corrected_metrics']['accuracy']:.4f}, "
+              f"NMI: {correction_results['corrected_metrics']['nmi']:.4f}, "
+              f"ARI: {correction_results['corrected_metrics']['ari']:.4f}")
+        print(f"Improvement - Accuracy: {correction_results['improvement']['accuracy']:.4f}, "
+              f"NMI: {correction_results['improvement']['nmi']:.4f}, "
+              f"ARI: {correction_results['improvement']['ari']:.4f}")
+        
+        # Save the correction results
+        correction_path = os.path.join(models_dir, f"correction_results_model{choice}.pkl")
+        with open(correction_path, 'wb') as f:
+            pickle.dump({
+                'correction_results': correction_results,
+                'corrected_test_clusters': corrected_test_clusters,
+                'original_model': choice
+            }, f)
+        print(f"Correction results saved to {correction_path}")
+    
+    if all([baseline_results, keyphrase_results, pckm_results, correction_results]):
+        compare_all_methods(baseline_results, keyphrase_results, pckm_results, correction_results)
+
+def run_specific_task(task_name):
+    """
+    Run a specific task in the pipeline
+    
+    Args:
+        task_name: String identifier for the task ('kmeans', 'keyphrase', 'pckm', 'correction')
+    """
+    models_dir = os.path.join(CACHE_DIR, "models")
+    os.makedirs(models_dir, exist_ok=True)
+    
+    dataset = load_banking77_data(train_limit=3000, test_limit=500)
+    
     embeddings = get_dataset_embeddings(dataset, model_name="all-MiniLM-L6-v2")
     
-    # Run baseline K-Means
-    """baseline_results, kmeans_model, train_clusters, test_clusters = run_kmeans_baseline(
-        dataset, embeddings, n_clusters=77
-    )
-    print("Baseline results:")
-    print(f"Train - Accuracy: {baseline_results['train_metrics']['accuracy']:.4f}, NMI: {baseline_results['train_metrics']['nmi']:.4f}, ARI: {baseline_results['train_metrics']['ari']:.4f}")
-    print(f"Test - Accuracy: {baseline_results['test_metrics']['accuracy']:.4f}, NMI: {baseline_results['test_metrics']['nmi']:.4f}, ARI: {baseline_results['test_metrics']['ari']:.4f}")
+    if task_name == 'kmeans':
+        kmeans_model_path = os.path.join(models_dir, "kmeans_model.pkl")
+        kmeans_results_path = os.path.join(models_dir, "kmeans_results.pkl")
+        
+        baseline_results, kmeans_model, train_clusters, test_clusters = run_kmeans_baseline(
+            dataset, embeddings, n_clusters=77
+        )
+        
+        # Save model and results
+        kmeans_data = {
+            'model': kmeans_model,
+            'train_clusters': train_clusters,
+            'test_clusters': test_clusters
+        }
+        with open(kmeans_model_path, 'wb') as f:
+            pickle.dump(kmeans_data, f)
+        
+        with open(kmeans_results_path, 'wb') as f:
+            pickle.dump(baseline_results, f)
+        
+        print("Baseline results:")
+        print(f"Train - Accuracy: {baseline_results['train_metrics']['accuracy']:.4f}, "
+              f"NMI: {baseline_results['train_metrics']['nmi']:.4f}, "
+              f"ARI: {baseline_results['train_metrics']['ari']:.4f}")
+        print(f"Test - Accuracy: {baseline_results['test_metrics']['accuracy']:.4f}, "
+              f"NMI: {baseline_results['test_metrics']['nmi']:.4f}, "
+              f"ARI: {baseline_results['test_metrics']['ari']:.4f}")
     
-    # Run keyphrase expansion clustering
-    keyphrase_results, keyphrase_model, keyphrase_train_clusters, keyphrase_test_clusters, train_combined, test_combined = run_keyphrase_clustering(
-        dataset, embeddings, n_clusters=77
-    )
-    print("\nKeyphrase expansion results:")
-    print(f"Train - Accuracy: {keyphrase_results['train_metrics']['accuracy']:.4f}, NMI: {keyphrase_results['train_metrics']['nmi']:.4f}, ARI: {keyphrase_results['train_metrics']['ari']:.4f}")
-    print(f"Test - Accuracy: {keyphrase_results['test_metrics']['accuracy']:.4f}, NMI: {keyphrase_results['test_metrics']['nmi']:.4f}, ARI: {keyphrase_results['test_metrics']['ari']:.4f}")
-    """
-    # Run pairwise constraint clustering
-    pckm_results, pckm_centers, pckm_train_clusters, pckm_test_clusters = run_pairwise_constraint_clustering(
-        dataset, embeddings, n_clusters=77, n_constraints=1000
-    )
-    print("\nPairwise constraint clustering results:")
-    print(f"Train - Accuracy: {pckm_results['train_metrics']['accuracy']:.4f}, NMI: {pckm_results['train_metrics']['nmi']:.4f}, ARI: {pckm_results['train_metrics']['ari']:.4f}")
-    print(f"Test - Accuracy: {pckm_results['test_metrics']['accuracy']:.4f}, NMI: {pckm_results['test_metrics']['nmi']:.4f}, ARI: {pckm_results['test_metrics']['ari']:.4f}")
+    elif task_name == 'keyphrase':
+        # Run Keyphrase Expansion
+        keyphrase_model_path = os.path.join(models_dir, "keyphrase_model.pkl")
+        keyphrase_results_path = os.path.join(models_dir, "keyphrase_results.pkl")
+        
+        keyphrase_results, keyphrase_model, keyphrase_train_clusters, keyphrase_test_clusters, train_combined, test_combined = run_keyphrase_clustering(
+            dataset, embeddings, n_clusters=77
+        )
+        
+        # Save model and results
+        keyphrase_data = {
+            'model': keyphrase_model,
+            'train_clusters': keyphrase_train_clusters,
+            'test_clusters': keyphrase_test_clusters,
+            'train_combined': train_combined,
+            'test_combined': test_combined
+        }
+        with open(keyphrase_model_path, 'wb') as f:
+            pickle.dump(keyphrase_data, f)
+        
+        with open(keyphrase_results_path, 'wb') as f:
+            pickle.dump(keyphrase_results, f)
+        
+        print("Keyphrase expansion results:")
+        print(f"Train - Accuracy: {keyphrase_results['train_metrics']['accuracy']:.4f}, "
+              f"NMI: {keyphrase_results['train_metrics']['nmi']:.4f}, "
+              f"ARI: {keyphrase_results['train_metrics']['ari']:.4f}")
+        print(f"Test - Accuracy: {keyphrase_results['test_metrics']['accuracy']:.4f}, "
+              f"NMI: {keyphrase_results['test_metrics']['nmi']:.4f}, "
+              f"ARI: {keyphrase_results['test_metrics']['ari']:.4f}")
     
-    """# Run LLM correction
-    correction_results, corrected_test_clusters = run_llm_correction(
-        dataset, embeddings, kmeans_model, train_clusters, test_clusters, n_clusters=77, n_corrections=500
-    )
-    print("\nLLM correction results:")
-    print(f"Original - Accuracy: {correction_results['original_metrics']['accuracy']:.4f}, NMI: {correction_results['original_metrics']['nmi']:.4f}, ARI: {correction_results['original_metrics']['ari']:.4f}")
-    print(f"Corrected - Accuracy: {correction_results['corrected_metrics']['accuracy']:.4f}, NMI: {correction_results['corrected_metrics']['nmi']:.4f}, ARI: {correction_results['corrected_metrics']['ari']:.4f}")
-    print(f"Improvement - Accuracy: {correction_results['improvement']['accuracy']:.4f}, NMI: {correction_results['improvement']['nmi']:.4f}, ARI: {correction_results['improvement']['ari']:.4f}")
-    """
-    # Compare all methods
-    #compare_all_methods(baseline_results, keyphrase_results, pckm_results, correction_results)
+    elif task_name == 'pckm':
+        # Run PCKMeans
+        pckm_model_path = os.path.join(models_dir, "pckm_model.pkl")
+        pckm_results_path = os.path.join(models_dir, "pckm_results.pkl")
+        
+        pckm_results, pckm_centers, pckm_train_clusters, pckm_test_clusters = run_pairwise_constraint_clustering(
+            dataset, embeddings, n_clusters=77, n_constraints=1000
+        )
+        
+        # Save model and results
+        pckm_data = {
+            'centers': pckm_centers,
+            'train_clusters': pckm_train_clusters,
+            'test_clusters': pckm_test_clusters
+        }
+        with open(pckm_model_path, 'wb') as f:
+            pickle.dump(pckm_data, f)
+        
+        with open(pckm_results_path, 'wb') as f:
+            pickle.dump(pckm_results, f)
+        
+        print("Pairwise constraint clustering results:")
+        print(f"Train - Accuracy: {pckm_results['train_metrics']['accuracy']:.4f}, "
+              f"NMI: {pckm_results['train_metrics']['nmi']:.4f}, "
+              f"ARI: {pckm_results['train_metrics']['ari']:.4f}")
+        print(f"Test - Accuracy: {pckm_results['test_metrics']['accuracy']:.4f}, "
+              f"NMI: {pckm_results['test_metrics']['nmi']:.4f}, "
+              f"ARI: {pckm_results['test_metrics']['ari']:.4f}")
+    
+    elif task_name == 'correction':
+        # Run LLM correction on a specified model
+        print("Which model would you like to use for LLM correction?")
+        print("1: K-Means Baseline")
+        print("2: Keyphrase Expansion")
+        print("3: Pairwise Constraint K-Means")
+        
+        choice = input("Enter your choice (1-3): ").strip()
+        
+        if choice == '1':
+            # Load K-Means model
+            kmeans_model_path = os.path.join(models_dir, "kmeans_model.pkl")
+            kmeans_results_path = os.path.join(models_dir, "kmeans_results.pkl")
+            
+            if not os.path.exists(kmeans_model_path) or not os.path.exists(kmeans_results_path):
+                print("K-Means model not found. Please run K-Means first.")
+                return
+            
+            with open(kmeans_model_path, 'rb') as f:
+                kmeans_data = pickle.load(f)
+                kmeans_model = kmeans_data['model']
+                train_clusters = kmeans_data['train_clusters']
+                test_clusters = kmeans_data['test_clusters']
+            
+            with open(kmeans_results_path, 'rb') as f:
+                baseline_results = pickle.load(f)
+            
+            print("Running LLM correction on K-Means Baseline model...")
+            correction_results, corrected_test_clusters = run_llm_correction(
+                dataset, embeddings, kmeans_model, train_clusters, test_clusters, 
+                n_clusters=77, n_corrections=500
+            )
+            original_results = baseline_results
+        
+        elif choice == '2':
+            # Load Keyphrase model
+            keyphrase_model_path = os.path.join(models_dir, "keyphrase_model.pkl")
+            keyphrase_results_path = os.path.join(models_dir, "keyphrase_results.pkl")
+            
+            if not os.path.exists(keyphrase_model_path) or not os.path.exists(keyphrase_results_path):
+                print("Keyphrase model not found. Please run Keyphrase expansion first.")
+                return
+            
+            with open(keyphrase_model_path, 'rb') as f:
+                keyphrase_data = pickle.load(f)
+                keyphrase_model = keyphrase_data['model']
+                keyphrase_train_clusters = keyphrase_data['train_clusters']
+                keyphrase_test_clusters = keyphrase_data['test_clusters']
+                train_combined = keyphrase_data['train_combined']
+                test_combined = keyphrase_data['test_combined']
+            
+            with open(keyphrase_results_path, 'rb') as f:
+                keyphrase_results = pickle.load(f)
+            
+            print("Running LLM correction on Keyphrase Expansion model...")
+            correction_results, corrected_test_clusters = run_llm_correction(
+                dataset, {"train": train_combined, "test": test_combined}, 
+                keyphrase_model, keyphrase_train_clusters, keyphrase_test_clusters, 
+                n_clusters=77, n_corrections=500
+            )
+            original_results = keyphrase_results
+        
+        elif choice == '3':
+            # Load PCKMeans model
+            pckm_model_path = os.path.join(models_dir, "pckm_model.pkl")
+            pckm_results_path = os.path.join(models_dir, "pckm_results.pkl")
+            
+            if not os.path.exists(pckm_model_path) or not os.path.exists(pckm_results_path):
+                print("PCKMeans model not found. Please run PCKMeans first.")
+                return
+            
+            with open(pckm_model_path, 'rb') as f:
+                pckm_data = pickle.load(f)
+                pckm_centers = pckm_data['centers']
+                pckm_train_clusters = pckm_data['train_clusters']
+                pckm_test_clusters = pckm_data['test_clusters']
+            
+            with open(pckm_results_path, 'rb') as f:
+                pckm_results = pickle.load(f)
+            
+            # For PCKM, we need to create a KMeans-like model object for compatibility
+            from sklearn.cluster import KMeans
+            pckm_kmeans = KMeans(n_clusters=77)
+            pckm_kmeans.cluster_centers_ = pckm_centers
+            
+            print("Running LLM correction on Pairwise Constraint K-Means model...")
+            correction_results, corrected_test_clusters = run_llm_correction(
+                dataset, embeddings, pckm_kmeans, pckm_train_clusters, pckm_test_clusters, 
+                n_clusters=77, n_corrections=500
+            )
+            original_results = pckm_results
+        
+        else:
+            print("Invalid choice. Skipping LLM correction.")
+            return
+        
+        print("\nLLM correction results:")
+        print(f"Original - Accuracy: {correction_results['original_metrics']['accuracy']:.4f}, "
+              f"NMI: {correction_results['original_metrics']['nmi']:.4f}, "
+              f"ARI: {correction_results['original_metrics']['ari']:.4f}")
+        print(f"Corrected - Accuracy: {correction_results['corrected_metrics']['accuracy']:.4f}, "
+              f"NMI: {correction_results['corrected_metrics']['nmi']:.4f}, "
+              f"ARI: {correction_results['corrected_metrics']['ari']:.4f}")
+        print(f"Improvement - Accuracy: {correction_results['improvement']['accuracy']:.4f}, "
+              f"NMI: {correction_results['improvement']['nmi']:.4f}, "
+              f"ARI: {correction_results['improvement']['ari']:.4f}")
+        
+        # Save the correction results
+        correction_path = os.path.join(models_dir, f"correction_results_model{choice}.pkl")
+        with open(correction_path, 'wb') as f:
+            pickle.dump({
+                'correction_results': correction_results,
+                'corrected_test_clusters': corrected_test_clusters,
+                'original_model': choice
+            }, f)
+        print(f"Correction results saved to {correction_path}")
+    
+    else:
+        print(f"Unknown task: {task_name}")
+        print("Available tasks: 'kmeans', 'keyphrase', 'pckm', 'correction'")
+
 
 def compare_all_methods(baseline_results, keyphrase_results, pckm_results, correction_results):
     """
@@ -1077,11 +1419,15 @@ def compare_all_methods(baseline_results, keyphrase_results, pckm_results, corre
     plt.legend()
     plt.tight_layout()
     
-    # Save figure
     plt.savefig(f"{RESULTS_DIR}/method_comparison_{timestamp}.png", dpi=300)
     print(f"Visualization saved to {RESULTS_DIR}/method_comparison_{timestamp}.png")
 
-if __name__ == "__main__":
-    main()
 
+if __name__ == "__main__":
+    import sys
+    
+    if len(sys.argv) > 1:
+        run_specific_task(sys.argv[1])
+    else:
+        main()
     
