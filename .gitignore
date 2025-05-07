@@ -1,0 +1,52 @@
+# Large files
+datasets/opiec/OPIEC59k_valid
+datasets/opiec/OPIEC59k_test
+datasets/reverb/reverb45k_change_test_read
+datasets/reverb/reverb45k_valid
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log
+
+.env
+secrets.json
+.DS_Store
+*.pytest_cache/
+*.ipynb
+*.ipynb_checkpoints/*/*/*/*     
+cache/
