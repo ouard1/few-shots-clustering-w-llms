@@ -1,0 +1,35 @@
+{
+  "method": "entity_llm_correction",
+  "n_clusters": 490,
+  "n_corrections": 500,
+  "original_metrics": {
+    "macro_precision": 0.7091869038728583,
+    "macro_recall": 0.7346272144560567,
+    "macro_f1": 0.7216829273339285,
+    "micro_precision": 0.509,
+    "micro_recall": 0.57,
+    "micro_f1": 0.537775718257646,
+    "pair_precision": 0.17346655564807106,
+    "pair_recall": 0.2972651605231867,
+    "pair_f1": 0.21908684602576464,
+    "avg_f1": 0.49284849720577967
+  },
+  "corrected_metrics": {
+    "macro_precision": 0.7069601538077136,
+    "macro_recall": 0.7327091835725087,
+    "macro_f1": 0.7196044031296058,
+    "micro_precision": 0.514,
+    "micro_recall": 0.567,
+    "micro_f1": 0.5392007400555041,
+    "pair_precision": 0.18704927884615385,
+    "pair_recall": 0.29607609988109396,
+    "pair_f1": 0.22926065739802964,
+    "avg_f1": 0.4960219335277132
+  },
+  "improvement": {
+    "macro_f1": -0.0020785242043226404,
+    "micro_f1": 0.0014250217978580837,
+    "pair_f1": 0.010173811372265001,
+    "avg_f1": 0.0031734363219335093
+  }
+}

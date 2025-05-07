@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replia | Intelligent Customer Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<!-- 
+    Replia | Intelligent Customer Support
+    --------------------------------------
+    This is the main landing page for Replia, an AI-powered customer support assistant.
+    The page features:
+      - A clean navigation header with the Replia logo
+      - A hero section highlighting the product's value proposition
+      - An interactive chat interface 
+    Technologies used:
+      - HTML5 for structure
+      - CSS3 for styling (linked externally)
+      - Font Awesome for icons
+      - JavaScript (linked externally) for chat functionality
+-->
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span>Replia</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Say <span class="toggle-pill"><span class="toggle-circle"></span></span> Goodbye To Slow Support <br>&amp; Hello To <span>Quick, </span><span class="highlight">Accurate Answers</span></h1>
+                <p>With Replia, your customers get the information they need to receive fast, effective support.</p>
+            </div>
+            <div class="hero-image">
+                <img src="./hero_image.png" alt="Customer Support Image">
+            </div>
+        </section>
+
+        <section class="chat-section" id="chat">
+            <div class="container">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2>Your AI-Powered Chat Assistant</h2>
+                        <p>Get instant support and answers to your questions</p>
+                    </div>
+                    
+                    <div class="chat-box">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="message bot">
+                                <div class="message-content">
+                                    <p>Hi! How can I help you today?</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input">
+                            <input type="text" id="user-input" placeholder="Type your message here...">
+                            <button id="send-btn" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Replia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

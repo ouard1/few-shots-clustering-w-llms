@@ -1,0 +1,28 @@
+{
+  "method": "entity_keyphrase_clustering",
+  "n_clusters": 490,
+  "train_metrics": {
+    "macro_precision": 0.637070412734496,
+    "macro_recall": 0.6915194897636785,
+    "macro_f1": 0.6631792187029664,
+    "micro_precision": 0.652,
+    "micro_recall": 0.4782,
+    "micro_f1": 0.5517366837727836,
+    "pair_precision": 0.6239654722663568,
+    "pair_recall": 0.15827242924599236,
+    "pair_f1": 0.2524974329939447,
+    "avg_f1": 0.48913777848989826
+  },
+  "test_metrics": {
+    "macro_precision": 0.7091869038728583,
+    "macro_recall": 0.7346272144560567,
+    "macro_f1": 0.7216829273339285,
+    "micro_precision": 0.509,
+    "micro_recall": 0.57,
+    "micro_f1": 0.537775718257646,
+    "pair_precision": 0.17346655564807106,
+    "pair_recall": 0.2972651605231867,
+    "pair_f1": 0.21908684602576464,
+    "avg_f1": 0.49284849720577967
+  }
+}

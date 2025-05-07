@@ -1,0 +1,30 @@
+{
+  "method": "entity_pckm",
+  "n_clusters": 490,
+  "n_constraints": 1000,
+  "constraint_weight": 1.0,
+  "train_metrics": {
+    "macro_precision": 0.6222150896335761,
+    "macro_recall": 0.7549195198042771,
+    "macro_f1": 0.682173425113316,
+    "micro_precision": 0.6322,
+    "micro_recall": 0.4898,
+    "micro_f1": 0.5519635650623886,
+    "pair_precision": 0.5624463288965221,
+    "pair_recall": 0.12607296460043912,
+    "pair_f1": 0.20597614847500603,
+    "avg_f1": 0.4800377128835702
+  },
+  "test_metrics": {
+    "macro_precision": 0.670981203155076,
+    "macro_recall": 0.7211960844282881,
+    "macro_f1": 0.6951830356037839,
+    "micro_precision": 0.474,
+    "micro_recall": 0.547,
+    "micro_f1": 0.5078903036238982,
+    "pair_precision": 0.17327960322380656,
+    "pair_recall": 0.26587395957193816,
+    "pair_f1": 0.2098151449751337,
+    "avg_f1": 0.4709628280676053
+  }
+}

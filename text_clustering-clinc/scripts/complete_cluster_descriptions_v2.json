@@ -1,0 +1,452 @@
+{
+    "35": {
+        "description": "This cluster revolves around language translation and learning basic phrases in various languages. The intent behind these phrases is to seek guidance on how to communicate simple, everyday expressions in different languages. The user is looking to acquire or confirm the translations of common greetings, courtesies, or words related to meals. The cluster reflects a interest in practical language skills for multilingual communication."
+    },
+    "0": {
+        "description": "This cluster is focused on customizing communication preferences. The phrases indicate a desire to alter the language, accent, or voice characteristics used in responses. The intent behind these phrases is to tailor the interaction to the user's preferred linguistic or vocal settings. Users are seeking to modify the way they receive information, either by changing the language entirely or by adjusting the voice type."
+    },
+    "1": {
+        "description": "This cluster contains requests related to spelling and translation. The phrases express the user's desire to know the correct spelling of specific words or how to translate a word into another language. The intent is to seek accurate linguistic information, including the proper spelling of terms and basic translations. The user is looking for guidance on the correct use of words in different contexts."
+    },
+    "14": {
+        "description": "This cluster represents various banking and financial management tasks. The main topics include setting up direct deposit, travel notifications for the bank, ordering checks, transferring funds between accounts, and depositing money into an account from an external source. The intent behind these phrases is to perform specific banking actions and manage personal finances efficiently. The user is looking for guidance or assistance in executing these tasks, highlighting a need for convenience and effective financial management."
+    },
+    "128": {
+        "description": "This cluster represents requests related to transferring funds between accounts. The main topic is financial transactions, specifically moving money from one account to another. The intent behind the phrase is to initiate a transfer of a specified amount from a source account to a destination account. The user is instructing a financial action to be carried out, detailing the origin, target, and the amount to be transferred."
+    },
+    "26": {
+        "description": "This cluster revolves around the concept of setting and managing time-related notifications. The intent behind these phrases is to request the creation or review of alarms, timers, and reminders. The user is looking to organize their schedule or keep track of tasks and events through various forms of time-based alerts. The phrases indicate a need for assistance in setting up and monitoring these temporal prompts."
+    },
+    "136": {
+        "description": "This cluster contains requests related to seeking definitions of words. The intent behind this phrase is to ask for the meaning of a specific term. The user is looking to gain understanding or clarification about the word \"churlish\" by asking for its definition. The overall purpose is to expand vocabulary knowledge or resolve linguistic uncertainty."
+    },
+    "78": {
+        "description": "This cluster contains requests related to seeking definitions or explanations of specific terms. The intent behind these phrases is to gain understanding and clarification of particular words or concepts. The user is looking to expand their knowledge or resolve linguistic curiosities by asking for detailed meanings."
+    },
+    "58": {
+        "description": "This cluster contains requests for definitions of specific terms. The intent behind these phrases is to seek explanations and understand the meanings of particular words. The user is looking to gain clarity on the definitions of terms that are often used in political, social, or general contexts. The phrases indicate a desire to learn and comprehend the precise significance of each term mentioned."
+    },
+    "107": {
+        "description": "This cluster contains requests for definitions of specific words. The intent behind these phrases is to seek clarification or understanding of the meanings of particular vocabulary terms. The user is looking to expand their knowledge or resolve linguistic curiosities by asking for explanations of these words."
+    },
+    "102": {
+        "description": "This cluster contains requests for explanations or definitions. The intent behind these phrases is to seek clarification or understanding of a specific term. The user is looking to gain knowledge by asking for a precise definition of a particular word."
+    },
+    "13": {
+        "description": "This cluster is focused on vocabulary and word meanings. The intent behind these phrases is to seek definitions or explanations for specific terms. The user is looking to understand the meaning of particular words, suggesting a desire to expand their vocabulary or clarify the usage of these terms. The phrases indicate a quest for linguistic knowledge."
+    },
+    "141": {
+        "description": "This cluster is focused on currency exchange and conversion. The intent behind these phrases is to find out the value of one currency in terms of another. Users are seeking to understand how much of a foreign currency they would receive for a given amount in their original currency. The phrases indicate a need for information on exchange rates and the relative worth of different currencies, such as USD, EUR, and CAD. The users are interested in converting specific amounts or understanding the general exchange rate between different currency pairs."
+    },
+    "85": {
+        "description": "This cluster contains requests for definitions of specific terms. The intent behind these phrases is to seek clarification and understanding of particular words or concepts. The user is looking to gain knowledge by asking for explanations of vocabulary, demonstrating a desire to learn or confirm the meanings of these terms. The overall theme of this cluster is educational, focusing on the comprehension of linguistic expressions."
+    },
+    "126": {
+        "description": "This cluster focuses on the concept of institutional racism. The intent behind this phrase is to seek a clear explanation of what institutional racism means. The user is looking to understand the systemic and structural aspects of racism that are embedded within social, political, and economic institutions."
+    },
+    "4": {
+        "description": "This cluster contains requests for information related to roles and hierarchies. The intent behind these phrases is to seek definitions or identifications of specific roles or positions. The user is looking to understand the meaning of a particular term or the identity of someone in a higher position. The phrases suggest a curiosity about the structure or organization, particularly in the context of roles and responsibilities."
+    },
+    "6": {
+        "description": "This cluster contains requests related to understanding the meanings of specific words. The phrases express the user's desire to obtain precise definitions for the terms \"alliance\" and \"migrate.\" The intent is to seek clarification and learn the exact meanings of these words. The user is looking to expand their vocabulary or comprehend the usage of these terms in various contexts."
+    },
+    "105": {
+        "description": "This cluster is focused on vocabulary and language understanding. The intent behind the phrase is to seek the definition or meaning of a specific word. The user is looking to expand their knowledge of language by asking for clarification on the term \"paean.\" This cluster is about learning and comprehending linguistic terms."
+    },
+    "144": {
+        "description": "This cluster represents philosophical and existential inquiries. The main topics include the purpose of life, the reason for human existence on Earth, and the nature of consciousness or identity of the responder. The intent behind these phrases is to seek profound answers to fundamental questions about life's meaning and the responder's own nature. The user is exploring abstract and deep concepts to gain insight and understanding. Additionally, there is an underlying curiosity about the responder's own capabilities and self-awareness."
+    },
+    "116": {
+        "description": "This cluster is centered around philosophical or spiritual inquiries. The intent behind the phrase is to explore the idea of a purpose beyond ordinary day-to-day existence. The user is contemplating the concept of a more profound or meaningful reason for being. This cluster is about seeking deeper meaning and questioning the existence of a greater purpose in life."
+    },
+    "44": {
+        "description": "This cluster pertains to inquiries about insurance policies and services. The main topics include understanding current insurance plans, making modifications to existing policies, obtaining new insurance, and assessing coverage details. The intent behind these phrases is to seek assistance and information related to managing and updating insurance policies. Users are looking for guidance on their current insurance status, how to make adjustments, and how to acquire new insurance options. The overall aim is to navigate various aspects of insurance management effectively."
+    },
+    "48": {
+        "description": "This cluster revolves around managing and locating a mobile phone. The intent behind these phrases is to seek assistance with different aspects of phone handling, such as locating a misplaced device, managing connections, and controlling synchronization processes. The user is looking for support to either find their phone or adjust its settings to better suit their needs. The overall focus is on phone retrieval and control."
+    },
+    "30": {
+        "description": "This cluster contains inquiries related to travel safety and advisories for various international destinations. The intent behind these phrases is to gather information about potential risks, current alerts, or safety levels associated with traveling to specific countries. Users are seeking reassurance and up-to-date details about political or social unrest, health advisories, or other security concerns that could impact their travel plans. The goal is to make informed decisions about forthcoming trips based on the current situation in those locations."
+    },
+    "82": {
+        "description": "This cluster primarily represents inquiries related to Paid Time Off (PTO) management. The intent behind these phrases is to gather information about PTO balances and the process of requesting time off. The user is seeking to understand their available PTO days, how much PTO they have used, and how to request PTO for specific dates. The inclusion of a query about the preparation time for pho is an outlier and does not align with the main topic of PTO management. The cluster's focus is on obtaining details about PTO to plan and manage time off effectively."
+    },
+    "118": {
+        "description": "This cluster pertains to inquiries about leave and vacation statuses. The main topics include the usage of vacation days, the approval status of time-off requests, and the total number of days off taken. The intent behind these phrases is to seek updates on the status of vacation approvals and to understand the number of vacation days that have been utilized. Users are looking to confirm how many days they have taken off and whether their leave requests have been approved."
+    },
+    "83": {
+        "description": "This cluster contains inquiries and requests related to credit card management and services. The intent behind these phrases is to seek information or perform actions related to credit cards, such as checking credit scores, redeeming rewards, understanding credit limits, updating account security, and adjusting credit limits. The user is looking to manage various aspects of their credit card accounts effectively."
+    },
+    "113": {
+        "description": "This cluster represents a collection of requests for intriguing or fascinating information about specific geographical locations. The main topics revolve around cities and natural landmarks, with users seeking to learn unique or lesser-known facts about these places. The intent behind these phrases is to discover interesting trivia or insights that make each location distinctive. Users are motivated by curiosity and a desire to gain entertaining and educational information about various destinations."
+    },
+    "72": {
+        "description": "This cluster represents a desire for information about New York. The main topics include geographical details and current local time, specifically focusing on the state of New York and the city of Manhattan. The intent behind these phrases is to gather intriguing facts or data about New York State and to find out the current time in Manhattan. The user is seeking both educational content and practical, time-related information relevant to the region."
+    },
+    "59": {
+        "description": "This cluster represents a curiosity and interest in pets and animals. The main topics revolve around various types of pets, trivia related to animals, and personal preferences regarding pets. The intent behind these phrases is to gather information about different animals, learn interesting facts about them, and engage in a conversation about pets. The user is seeking to expand their knowledge about specific animals like cats and the maned wolf, as well as express their personal connection to pets. There is also an element of personal interaction, suggesting an interest in sharing experiences or preferences related to pets."
+    },
+    "25": {
+        "description": "This cluster contains requests for interesting and fun facts about various topics. The intent behind these phrases is to seek intriguing or lesser-known information about specific subjects. The user is looking to gain trivia or fascinating insights about diverse topics such as animals, historical events, food items, and other curiosities. The goal is to acquire entertaining and educational tidbits that are not commonly known."
+    },
+    "149": {
+        "description": "This cluster revolves around billing and payment schedules. The phrases indicate a clear intent to understand and confirm the due dates or payment timelines for various bills and invoices. Users are aiming to gather specific information on when their financial obligations, such as credit card bills and utility payments, need to be settled. They are seeking clarity on the exact dates by which payments must be made to avoid any penalties or service disruptions. Additionally, there is an interest in knowing the upcoming payday, which suggests a broader concern with managing personal finances and ensuring timely payments."
+    },
+    "76": {
+        "description": "This cluster pertains to inquiries about personal income and earnings. The phrases reflect the user's interest in understanding their financial inflow from employment. The intent is to gather information about the amount of money received from their job, encompassing different time frames such as weekly paychecks and yearly income. Additionally, the user is seeking details about their income tax, suggesting an interest in understanding their financial obligations. Overall, the cluster aims to provide a comprehensive view of the user's earnings and related tax information."
+    },
+    "34": {
+        "description": "This cluster pertains to credit card management and related inquiries. The intent behind these phrases is to seek assistance and information regarding various aspects of credit card usage and issues. The user is looking for help with obtaining a new credit card, understanding specific details about their existing card (such as expiration date and APR status), and handling urgent situations like lost or damaged cards. The phrases indicate a need for guidance on navigating different credit card services and resolving potential problems."
+    },
+    "40": {
+        "description": "This cluster pertains to inquiries about time and time zones. The intent behind these phrases is to seek information about the current time in various locations or time zones. Users are looking to understand the precise hour in specific geographical areas or time zones, indicating a need for temporal awareness across different regions. The phrases reflect a desire to know the local time in cities like London and Paris, as well as in specific time zones like Pacific Standard Time. Additionally, there is a general interest in determining the time zone of a country, suggesting a broader curiosity about global time differences."
+    },
+    "138": {
+        "description": "This cluster is centered around inquiries about the current time in a specific location. The intent behind the phrase is to find out the present time in Ourense. The user is looking to get accurate, up-to-date time information for this particular place."
+    },
+    "84": {
+        "description": "This cluster revolves around air travel inquiries and tasks. The main topics include flight scheduling, status updates, and booking processes. The intent behind these phrases is to gather information about specific flights, such as departure and arrival times, boarding details, and current flight status. Additionally, the user is looking to organize and plan trips by booking round-trip flights for specified dates and routes. The cluster also implies a desire to stay informed about any potential changes or delays in flight schedules. Overall, the user aims to manage and stay updated on their travel itinerary effectively."
+    },
+    "130": {
+        "description": "This cluster represents requests for a simple, random binary outcome, often used for decision-making or casual games. The intent behind these phrases is to seek an impartial, random result that can be conceptualized as a coin toss. Users are looking to replicate the real-world action of flipping a coin to get one of two possible outcomes, typically 'heads' or 'tails'. They expect a straightforward, quick response that mimics a coin flip."
+    },
+    "115": {
+        "description": "This cluster represents requests related to initiating or managing phone calls and reminders. The intent behind these phrases is to instruct or ask for assistance with making phone calls to specific contacts or handling call-related tasks. The user is seeking to perform actions such as dialing numbers, contacting individuals, setting reminders for calls, or updating contact information. The phrases indicate a need for help with various telephony tasks and personal contact management."
+    },
+    "17": {
+        "description": "This cluster involves requests and preferences related to names and addressing individuals. The intent behind these phrases is to either inquire about or specify how one should be addressed or referred to. The user is expressing a desire to know their recorded name or to update or use a different name for addressing purposes. The phrases indicate a focus on personal identification and the social or official designations used for individuals."
+    },
+    "135": {
+        "description": "This cluster contains directives related to personal identification and address preferences. The intent behind the phrase is to instruct the recipient to use a specific name when referring to the speaker in the future. The user is expressing a preference for being addressed by the name \"Chuck\" from this point forward. The cluster is about communicating a change in how the user wishes to be identified and addressed."
+    },
+    "142": {
+        "description": "This cluster contains statements related to self-identification. The intent behind these phrases is to declare or confirm the identity of the speaker. The user is explicitly stating their name, indicating a purpose of introduction or recognition."
+    },
+    "69": {
+        "description": "This cluster is focused on inquiries about age and birth details. The phrases indicate a curiosity about the age or birth year of an individual, likely directed towards an artificial intelligence (AI) or another entity. The intent behind these phrases is to gather personal or background information, specifically pertaining to the age and birthplace. The user is seeking to understand or confirm details related to the entity's lifespan or origin."
+    },
+    "66": {
+        "description": "This cluster contains questions focused on the origin and creation of a digital entity, likely a chatbot or AI. The intent behind these phrases is to learn more about the entity's background, specifically where it was developed and by whom. The user is curious about the source and creation process of the entity they are interacting with. The phrases indicate an interest in the geographical location of the entity's programming and the creators behind its existence."
+    },
+    "49": {
+        "description": "This cluster contains inquiries about an individual's origin or background. The intent behind these phrases is to determine or understand where someone comes from or grew up. The user is seeking information about the person's native place, hometown, or initial roots, expressed through various polite and curious questions."
+    },
+    "70": {
+        "description": "This cluster is focused on managing and updating a shopping list. The intent behind these phrases is to request modifications to the list, including adding new items or swapping existing ones. The user is seeking assistance to ensure their shopping list is accurate and up-to-date, with specific items either added or exchanged. The phrases also express a degree of uncertainty about the current status of the list, prompting the need for verification and updates."
+    },
+    "140": {
+        "description": "This cluster revolves around the topic of bananas, specifically focusing on their inclusion in a shopping list and their nutritional information. The intent behind these phrases is to manage a shopping list and gather detailed nutritional data about bananas. The user is interested in ensuring they have bananas on their list and wants to understand the nutritional benefits and caloric content of consuming bananas."
+    },
+    "15": {
+        "description": "This cluster revolves around managing and updating personal lists, particularly to-do lists and shopping lists. The intent behind these phrases is to organize and keep track of tasks and items that the user needs to accomplish or purchase. The user is seeking to add items to their lists, check what is already on them, and confirm the presence of specific items. The overall goal is to stay organized and ensure that necessary tasks and purchases are not forgotten."
+    },
+    "31": {
+        "description": "This cluster revolves around the topic of food, specifically focusing on steak and related dining or preparation aspects. The intent behind these phrases is to gather information about steak recipes, nutritional content of hamburgers, and making reservations at a steakhouse. Additionally, the user is interested in setting reminders for checking steak and adding steak to their grocery list. The phrases reflect a mix of inquiries, reminders, and requests related to steak and dining experiences."
+    },
+    "38": {
+        "description": "This cluster represents inquiries about the capabilities and knowledge base of an AI or intelligent system. The main topics revolve around understanding the scope of questions the AI can handle and the types of information it possesses. The intent behind these phrases is to explore the AI's areas of expertise and the range of subjects it can provide information on. The user is seeking to gain clarity on what kinds of queries can be effectively addressed by the AI, indicating a desire to understand the system's functionalities and limitations."
+    },
+    "24": {
+        "description": "This cluster represents requests for repetition or clarification of previously stated or asked information. The main topic is communication and understanding, with a specific focus on revisiting something that was already mentioned. The intent behind these phrases is to express a need to hear or review the information again. The user is seeking to ensure they correctly understood the previous statement or question by asking for it to be repeated. The phrases indicate a desire for clear and accurate communication."
+    },
+    "51": {
+        "description": "This cluster represents expressions of uncertainty or lack of knowledge. The main topic revolves around the speaker's inability to provide an answer or make a decision. The intent behind these phrases is to communicate a state of indecision or lack of information. The user is conveying that they do not possess the necessary knowledge to respond definitively to a question or situation."
+    },
+    "7": {
+        "description": "This cluster contains expressions of refusal or disapproval. The intent behind these phrases is to convey a negative response or decline something. The user is clearly expressing their unwillingness or rejection in various informal and colloquial ways. The phrases indicate a strong preference against whatever is being suggested or asked."
+    },
+    "100": {
+        "description": "This cluster represents expressions of uncertainty or lack of knowledge. The main topic is the admission of not having information or a solution. The intent behind this phrase is to communicate the speaker's inability to provide a response or answer, indicating a need for assistance or further information."
+    },
+    "109": {
+        "description": "This cluster revolves around the topic of vehicle maintenance, specifically concerning oil changes. The intent behind these phrases is to seek information and assistance related to the process of changing engine oil. The user is interested in understanding the timing and method for changing oil, as well as scheduling professional services for this task. Additionally, there is a query about the substitutability of different fats, which might be related to cooking rather than vehicle maintenance. Overall, the cluster primarily focuses on the practical aspects of oil changes for cars, including learning how to do it and arranging for professional help."
+    },
+    "11": {
+        "description": "This cluster is focused on managing reservations and bookings. The intent behind these phrases is to handle various aspects of reservations, including making, confirming, and canceling them. The user is seeking to arrange or modify reservations for dining at restaurants and staying at hotels. The requests involve specifying details such as the time, date, location, and the name under which the reservation should be made. Additionally, the user is interested in both domestic and international bookings, indicating a need for versatile and wide-ranging reservation services."
+    },
+    "88": {
+        "description": "This cluster is focused on making reservations at a specific restaurant. The intent behind these phrases is to secure a table for a particular number of people, specifically three, at a restaurant named Xenophobe, under the name Zebee. The user is looking to ensure a spot is reserved for their party at this establishment, with some variations inquiring about the availability of such reservations. The overall goal is to successfully book a table for three individuals at Xenophobe under the specified name."
+    },
+    "99": {
+        "description": "This cluster pertains to making reservations, specifically for accommodations. The intent behind this phrase is to secure lodging for two people under a specified name. The user is aiming to arrange a room booking, indicating a need for travel or accommodation planning. The cluster highlights a request for hospitality services, with the user providing necessary details to facilitate the reservation process."
+    },
+    "64": {
+        "description": "This cluster represents commands or requests to control various electronic devices and lights within a home or living space. The main topics include the operation of a television and different lighting systems in specific areas such as the living room and hallway. The intent behind these phrases is to issue instructions to activate these devices and lighting fixtures. The user is aiming to manage their home environment by turning on different appliances and lights, using polite and direct language to convey their commands."
+    },
+    "62": {
+        "description": "This cluster contains inquiries related to interest rates on various banking products and services. The intent behind these phrases is to gather information about the interest rates applied to different types of accounts or loans. The user is seeking to understand the specific interest rates associated with their financial products, such as checking accounts, savings accounts, and personal loans, from different banking institutions. The queries indicate a need for detailed financial information to make informed decisions about their money management."
+    },
+    "16": {
+        "description": "This cluster revolves around inquiries related to bill payments and financial obligations. The intent behind these phrases is to seek information about the amounts owed for various bills and expenses. The user is looking to understand their financial commitments, including specific details like the minimum payment for a bill, the total amount due for all bills, and the costs associated with taxes and utilities. Additionally, there is an expression of need for financial assistance to cover these expenses. The overall goal is to gain clarity on upcoming payments and manage personal finances effectively."
+    },
+    "79": {
+        "description": "This cluster revolves around inquiries about timing and scheduling related to various establishments, particularly restaurants and retail stores. The intent behind these phrases is to gather information about wait times, travel durations, and reservation confirmations. Users are seeking to plan their visits efficiently by understanding the current status of wait times at food outlets like Chipotle and BJ's, as well as the travel time to reach a specific retail location like Target in Austin. Additionally, there is an interest in confirming reservations at a restaurant, indicating a need for precise scheduling details to ensure a smooth visit. Overall, the cluster reflects a desire for logistical information to facilitate better planning and punctuality."
+    },
+    "77": {
+        "description": "This cluster represents inquiries and requests related to account holds and blocks. The intent behind these phrases is to either understand why an account has been blocked or to initiate a block on an account. Users are seeking to control the accessibility of their accounts, either temporarily or permanently, due to various reasons such as security concerns, financial management, or unknown issues. The phrases indicate a sense of urgency and a desire for immediate action or information regarding the restriction of account activities. Additionally, the cluster includes a request for explanations behind existing account holds."
+    },
+    "132": {
+        "description": "This cluster represents urgent requests for assistance with banking and financial security issues. The main topics include account protection and fraud management. The intent behind these phrases is to seek immediate help to secure bank accounts and cards due to suspected or confirmed fraudulent activities. The user is looking for swift action to prevent further unauthorized access or transactions, emphasizing the need for prompt intervention from the service provider. The phrases convey a sense of urgency and a desire for immediate resolution to protect the user's financial assets."
+    },
+    "75": {
+        "description": "This cluster contains queries related to the transfer or movement of 401k retirement funds. The phrases express the user's interest in understanding the possibilities and processes involved in moving their 401k investments. The intent is to seek assistance or confirmation regarding the option to roll over their 401k funds to another account or financial instrument. The user is exploring the feasibility of a 401k rollover and looking for guidance on the subject."
+    },
+    "65": {
+        "description": "This cluster contains queries aimed at identifying the creator, employer, or controlling entity behind a product, service, or individual. The intent behind these phrases is to determine the source or authority responsible for the subject in question. The user is seeking to understand the organizational or manufacturing background, essentially wanting to know who or what is behind the creation or management of the entity they are interacting with."
+    },
+    "137": {
+        "description": "This cluster is focused on inquiries about the origin or creator of something referred to as \"thou.\" The intent behind the phrase is to seek information about the entity or person responsible for forming or creating \"thou.\" The user is interested in understanding the source or foundation of this particular subject."
+    },
+    "71": {
+        "description": "This cluster represents inquiries about travel durations to various destinations, specifically by bus. The main topics include different cities and towns, such as Seattle, Redmond, Ann Arbor, Bend (Oregon), and Lake Placid (NY). The intent behind these phrases is to find out the estimated travel time to reach these locations using bus transportation. Users are seeking information to plan their journeys effectively. The cluster emphasizes the need for current and specific travel duration details for better trip management."
+    },
+    "21": {
+        "description": "This cluster revolves around inquiries related to vehicle fuel management and efficiency. The phrases indicate a user's interest in understanding their car's fuel requirements and consumption, particularly in the context of city driving. The intent behind these phrases is to gather information necessary for making informed decisions about fueling the vehicle. The user is seeking guidance on the type of fuel to use, the car's fuel efficiency in urban areas, and whether they need to refuel based on their travel plans. Overall, the cluster aims to address concerns related to optimizing fuel usage and ensuring the car has adequate fuel for intended journeys."
+    },
+    "28": {
+        "description": "This cluster contains requests for location-based information and directions. The phrases express the user's need to find out how far they are from a specific landmark or where the nearest amenities or services are located. The intent is to seek geographical information or navigation assistance related to their current location. The user is looking to identify nearby points of interest, such as restaurants, parks, and transportation options, to make informed decisions about their movements and activities."
+    },
+    "10": {
+        "description": "This cluster revolves around music discovery and control. The phrases indicate a user's interest in identifying songs, playing specific tracks, and managing their music playlist. The intent is to interact with a music player or assistant to enhance the listening experience. The user is seeking to find out song titles, play particular songs, and add new tracks to their collection. Additionally, there is an interest in real-time information about the currently playing song. Overall, the cluster reflects a user's engagement with music and their desire to tailor their audio experience to their preferences."
+    },
+    "32": {
+        "description": "This cluster revolves around monitoring and reviewing financial transactions and purchases. The intent behind these phrases is to retrieve detailed information about past expenditures and the status of purchases. Users are looking to audit their spending habits, track specific types of purchases, and verify the details of their transactions within a specified time frame. The focus is on obtaining a comprehensive overview of their financial activities, including the status and specifics of individual purchases."
+    },
+    "120": {
+        "description": "This cluster represents inquiries about personal expenditure and spending habits. The main topics include tracking and evaluating the amount of money spent on various items or categories, such as groceries, makeup, and education, over different periods. The intent behind these phrases is to seek detailed information about one's recent or past expenses. The user aims to understand and possibly analyze their spending patterns to assess their financial behavior or make informed decisions about their budget. The questions reflect a desire to monitor and manage personal finances effectively."
+    },
+    "68": {
+        "description": "This cluster contains requests for dining recommendations. The phrases express the user's desire to discover various food options based on different criteria. The intent is to seek advice on where or what to eat, with a particular interest in diverse cuisines and quick meal ideas. The user is looking for suggestions that cater to their food preferences and needs, ranging from specific types of meals to general recommendations for eating places."
+    },
+    "57": {
+        "description": "This cluster focuses on seeking information about reviews and ratings for various establishments, particularly restaurants and hotels. The intent behind these phrases is to gather feedback and opinions from other customers to make informed decisions. Users are interested in the reputation and quality of different places, specifically looking for positive or favorable reviews to guide their choices. The cluster highlights a desire to ensure satisfactory experiences when dining out or staying at hotels."
+    },
+    "117": {
+        "description": "This cluster is centered around the topic of sushi and dining out. The intent behind these phrases is to gather information about sushi restaurants and related culinary experiences. The user is seeking recommendations for good sushi places in the area, inquiring about the quality of sushi at a specific restaurant, and wanting to know if reservations can be made at a particular sushi establishment. Additionally, there is an interest in exploring popular sushi recipes, indicating a desire to engage with sushi both at restaurants and through home cooking. The overall goal is to enhance the user's sushi dining experience by finding reputable places to eat and possibly trying new recipes."
+    },
+    "47": {
+        "description": "This cluster contains inquiries related to leave approval statuses. The phrases express the user's desire to know whether their time-off requests have been accepted or not. The intent is to seek confirmation or updates on the approval status of different types of leaves, such as vacation, maternity, or medical leave. The user is looking to verify if their leave requests have been processed and approved."
+    },
+    "95": {
+        "description": "This cluster pertains to inquiries about lost or missing luggage. The intent behind these phrases is to seek assistance or information on how to recover luggage that has been misplaced, particularly in the context of air travel. The user is expressing concern about their belongings and is looking for guidance on the steps to take to locate or report the lost items. The phrases indicate a sense of urgency and a need for support from relevant authorities, such as airlines, to resolve the issue."
+    },
+    "147": {
+        "description": "This cluster contains expressions of difficulty in comprehending spoken information. The intent behind these phrases is to indicate a failure to understand or hear what was communicated. The user is signaling that they need the speaker to repeat or clarify what was said, as they did not grasp the message effectively. The phrases convey a polite request for further clarification or repetition."
+    },
+    "61": {
+        "description": "This cluster represents a quest for information and clarification. The main topics revolve around seeking details or specifics about something that has already been communicated or established. The intent behind these phrases is to gain a better understanding or to request further elaboration on a subject. The user is looking to confirm or learn more about particular points or data."
+    },
+    "42": {
+        "description": "This cluster contains affirmations that confirm the truth or accuracy of a statement. The intent behind these phrases is to agree with or validate a point that has been made. The user is acknowledging the correctness of information presented to them, using different ways to express their agreement. The main topic is the confirmation of truth, and the phrases convey a sense of certainty and alignment with the stated facts."
+    },
+    "131": {
+        "description": "This cluster represents confirmation or acceptance. The intent behind this phrase is to express consent or approval. The user is acknowledging or affirming something that has been said or proposed."
+    },
+    "18": {
+        "description": "This cluster contains expressions of agreement, acknowledgment, and gratitude. The intent behind these phrases is to positively affirm actions or statements made by others. The user is expressing consent, verification, or thanks through concise, informal language. These phrases indicate a casual and friendly tone, suggesting a relaxed or familiar context. The overall theme is one of acceptance and appreciation, demonstrating a willingness to proceed with or acknowledge the given information or favor."
+    },
+    "53": {
+        "description": "This cluster represents statements expressing agreement or disagreement, validation, or rejection of information. The main topics revolve around confirming or denying the accuracy, authenticity, or propriety of something. The intent behind these phrases is to assert or dispute the truth, validity, or appropriateness of a particular statement, fact, or situation. The user is providing feedback or expressing their opinion on the correctness of certain information."
+    },
+    "90": {
+        "description": "This cluster represents a collection of contrasting responses or acknowledgments. The main topics revolve around providing clear, opposite reactions or confirmations. The intent behind these phrases is to communicate a straightforward positive or negative response. The user aims to convey agreement or disagreement in a concise and unambiguous manner."
+    },
+    "98": {
+        "description": "This cluster is focused on travel and outdoor activities in Arizona. The intent behind these phrases is to gather information about popular destinations and recreational opportunities within the state. The user is interested in finding recommendations for places to visit, hiking spots, and biking routes, indicating a strong desire to explore Arizona's natural and scenic attractions. The phrases highlight an interest in both sightseeing and physical activities, suggesting a broader curiosity about Arizona's tourism offerings."
+    },
+    "41": {
+        "description": "This cluster represents inquiries related to travel and tourism. The main topics include seeking recommendations and information about popular destinations, tourist attractions, and activities in various locations around the world. The intent behind these phrases is to gather insights and suggestions for planning enjoyable and memorable travel experiences. Users are looking for guidance on what to see and do in specific cities, indicating a strong interest in exploring new places and engaging in fun tourist activities."
+    },
+    "27": {
+        "description": "This cluster represents a mix of interests related to travel and cooking, specifically seafood dishes. The main topics include tourist activities in a particular location and preparing a specific seafood dish, notably shrimp scampi. The intent behind these phrases is to gather information for planning a visit to a place called Craberra and to learn about the nutritional content and recipe for shrimp scampi. The user is seeking guidance on both exploring a destination and cooking a seafood meal, indicating a dual interest in travel and culinary activities."
+    },
+    "5": {
+        "description": "This cluster contains inquiries related to the nutritional value and health benefits of various foods. The intent behind these phrases is to seek information about the health aspects of specific food items. The user is looking to understand the nutritional qualities of different foods, ranging from sweets like chocolate and pumpkin pie to savory items like hummus and salad. The questions indicate a desire to make informed dietary choices based on the health benefits of these foods."
+    },
+    "143": {
+        "description": "This cluster is focused on memory recall and reminders. The intent behind these phrases is to retrieve or list items that the user had previously wanted to remember or not forget. The user is expressing a need to jog their memory and access specific information that they had intended to keep in mind. The phrases indicate a search for personal notes, tasks, or details that were meant to be memorable or important to the user."
+    },
+    "50": {
+        "description": "This cluster represents requests and commands related to controlling the pace and continuation of speech. The main topics revolve around the speed of talking and the desire to stop or continue speech. The intent behind these phrases is to direct the speaker to adjust their rate of speaking, either by speeding up or by ceasing to talk altogether. The user is aiming to manage the flow of conversation to better suit their preferences or needs."
+    },
+    "43": {
+        "description": "This cluster is focused on tire maintenance and information for a vehicle. The intent behind these phrases is to seek assistance and information related to tire upkeep, including scheduling maintenance, checking tire conditions, and recalling tire replacement history. The user is looking for guidance on ensuring their tires are safe and well-maintained, as well as tracking important dates related to tire changes. The overall goal is to maintain optimal tire performance and safety."
+    },
+    "19": {
+        "description": "This cluster contains phrases that express a desire to halt or reverse an ongoing action or process. The intent behind these phrases is to communicate a clear and immediate request to stop or cancel something that is currently happening. The user is seeking to terminate or nullify an active procedure or decision, using different words to convey the same urgent command. The main topics revolve around cancellation, abrupt stopping, and rescinding actions. The phrases indicate a sense of urgency and a strong preference to not proceed with the current course of action."
+    },
+    "119": {
+        "description": "This cluster contains greetings and casual inquiries about well-being. The intent behind these phrases is to initiate a conversation or acknowledge someone's presence in a friendly and informal manner. The user is expressing a greeting or asking about the other person's current state or mood, aiming to start an interaction or show familiarity."
+    },
+    "121": {
+        "description": "This cluster contains requests related to obtaining nutritional information about specific food items. The intent behind these phrases is to gather detailed data on the nutritional content of particular products. The user is seeking to understand the dietary aspects, such as calories, fat, protein, and other nutrients, of the mentioned food items. This information is likely being sought for health, dietary, or personal interest purposes."
+    },
+    "54": {
+        "description": "This cluster revolves around the topic of nutrition and health aspects of specific foods, particularly potato chips and french fries. The intent behind these phrases is to gather detailed information about the nutritional content, such as calories and sodium levels, of these snacks. The user is seeking to understand the health implications of consuming these foods and is considering substitutions based on nutritional value. The queries indicate a interest in making informed dietary choices."
+    },
+    "92": {
+        "description": "This cluster represents requests related to obtaining information about and purchasing Coca-Cola products. The main topics include retrieving nutritional details and placing an order for the beverage. The intent behind these phrases is to gather specific data about Coke, particularly its nutritional content in a 12 oz serving, and to facilitate the purchase of a larger quantity, specifically a case, through an online retailer, Amazon. The user is looking to both understand the product's nutritional value and conveniently acquire it in bulk."
+    },
+    "29": {
+        "description": "This cluster contains inquiries related to food storage and spoilage. The phrases express the user's concern about the freshness and safety of consuming various food items stored in the refrigerator or freezer for different periods. The intent behind these phrases is to seek guidance on how long specific foods, such as milk, rice, chicken, eggs, and apple cider, can be safely kept and consumed. The user is looking for information to avoid food waste and prevent foodborne illnesses. Additionally, the cluster implies a need for understanding the proper storage durations and conditions for perishable items."
+    },
+    "45": {
+        "description": "This cluster represents inquiries related to dates, schedules, and calendar events. The intent behind these phrases is to gather information about specific dates, determine the current day, find out about upcoming holidays, and check scheduled events or appointments on particular days. The user is looking to manage and organize their time effectively by seeking details about their calendar and important dates."
+    },
+    "112": {
+        "description": "This cluster pertains to transportation and vehicle rental services. The intent behind these phrases is to secure or arrange different types of transportation. The user is looking to either book a ride-sharing service, like Uber, with specific pick-up times and locations, or rent a car from various locations such as airports or cities. The phrases indicate a need for assistance in scheduling and coordinating these services, with some requests including detailed parameters such as dates, times, and passenger counts. Overall, the cluster reflects a desire for convenient and timely transportation solutions."
+    },
+    "39": {
+        "description": "This cluster is centered around mathematical operations and problems. The intent behind these phrases is to seek help or answers to specific mathematical questions. The user is looking to perform or understand various arithmetic calculations, including addition, multiplication, and divisibility checks. Additionally, the user is expressing a need for general assistance with solving a math problem. The cluster reflects a clear interest in obtaining accurate and reliable solutions to mathematical queries."
+    },
+    "133": {
+        "description": "This cluster contains mathematical queries. The intent behind these phrases is to seek answers to specific arithmetic or numerical problems. The user is looking to perform calculations such as finding square roots or divisions. The questions involve different numbers and operations, but they all share the common goal of solving mathematical expressions."
+    },
+    "110": {
+        "description": "This cluster contains requests related to arithmetic calculations, specifically multiplication. The intent behind these phrases is to seek the product of two numbers. The user is looking to perform or verify multiplication operations involving specific pairs of numbers. The focus is on obtaining the correct result for these mathematical queries."
+    },
+    "94": {
+        "description": "This cluster contains requests related to mathematical operations and expressions. The intent behind these phrases is to seek assistance with calculus and algebra problems. The user is looking for help in performing specific mathematical computations, such as differentiation and factoring of polynomial expressions. The phrases indicate a need for guidance in solving these mathematical problems."
+    },
+    "127": {
+        "description": "This cluster pertains to inquiries about carry-on luggage policies for various airlines. The intent behind these phrases is to gather information about the rules and allowances for carry-on bags when traveling with specific airline companies. Users are seeking guidance on what they can bring aboard in terms of size, number, and any other relevant restrictions. The focus is on ensuring compliance with airline regulations regarding carry-on luggage to facilitate a smooth travel experience."
+    },
+    "22": {
+        "description": "This cluster revolves around automotive maintenance and servicing. The intent behind these phrases is to seek information about the timing of previous car maintenance or to schedule new maintenance services. The user is expressing a need to understand the history of their car's servicing or to arrange for professional assistance to address current car issues. There is a clear focus on ensuring the car is properly maintained and addressing any potential mechanical problems."
+    },
+    "63": {
+        "description": "This cluster embodies expressions of gratitude and appreciation. The intent behind these phrases is to acknowledge and thank someone for their help or assistance. The user is conveying a sense of satisfaction and recognition for the support received. The phrases highlight the positive sentiment of feeling grateful for the actions or aid provided by another person."
+    },
+    "86": {
+        "description": "This cluster is centered around requests to perform an action involving dice. The main topic is dice rolling, with a focus on different types of dice\u2014ranging from standard six-sided to more specialized ones like eight-sided or ten-sided. The intent behind these phrases is to ask for the execution of a dice roll and to receive the resulting number. Users are seeking to engage in a random number generation activity, which is commonly associated with gaming, decision-making, or educational purposes. The variations in the requests indicate a desire for specific dice configurations, reflecting different needs or preferences in the dice-rolling activity."
+    },
+    "12": {
+        "description": "This cluster contains questions related to ingredient substitutions in recipes or meals. The intent behind these phrases is to seek advice or confirmation about replacing one ingredient with another. The user is looking for guidance on whether certain alternatives can be used in place of specific ingredients, likely to accommodate personal preferences, availability, or dietary needs. The phrases indicate a desire to understand the acceptability and potential outcomes of using these substitutions."
+    },
+    "20": {
+        "description": "This cluster represents inquiries related to cooking and recipes. The main topics include various dishes and ingredients, such as chicken soup, pizza dough, pork barbecue, chicken alfredo, and pancakes. The intent behind these phrases is to seek guidance and instructions on how to prepare these specific foods. The user is looking for culinary information, including recipes, ingredients, and cooking methods, to successfully create these dishes at home."
+    },
+    "56": {
+        "description": "This cluster contains inquiries related to cooking times. The intent behind these phrases is to seek guidance on the duration needed to cook or heat various food items. The user is looking for specific instructions on how long different dishes or products should be cooked or heated to ensure they are properly prepared. The phrases indicate a need for culinary advice to achieve optimal cooking results."
+    },
+    "67": {
+        "description": "This cluster represents inquiries and expressions of interest related to cookies, specifically focusing on baking and obtaining them. The main topics include the duration for baking sugar cookies, setting reminders to purchase cookies, and the desire to acquire the skill of making cookies. The intent behind these phrases is to gather information and assistance regarding the preparation and procurement of cookies. The user is seeking guidance on baking techniques, reminders for timely ordering, and learning resources to enhance their culinary skills in the context of cookies."
+    },
+    "73": {
+        "description": "This cluster represents instructions for sending text messages to specific individuals. The main topics revolve around communicating brief messages to different people, such as greetings, updates on personal status, or simple acknowledgments. The intent behind these phrases is to convey specific information to named recipients via text messaging. The user is directing someone to send predefined messages to various contacts, indicating a need for timely and precise communication."
+    },
+    "101": {
+        "description": "This cluster represents queries seeking guidance or instructions. The main topics revolve around understanding the necessary actions or purchases required for a particular situation. The intent behind these phrases is to request clear directives or steps to follow. The user is looking for specific instructions or items they need to procure to accomplish a task or goal."
+    },
+    "111": {
+        "description": "This cluster pertains to inquiries about locating a W-2 tax form. The phrases indicate that the user is seeking guidance on where to obtain this specific document. The intent is to find information on the source or method to access the W-2 form, which is crucial for filing tax returns. The user is looking for directions or instructions to retrieve this important financial document."
+    },
+    "37": {
+        "description": "This cluster contains inquiries related to the caloric content of various food items. The intent behind these phrases is to seek information about the number of calories in specific foods. The user is looking to understand the nutritional value, particularly the calorie count, of different edibles such as ice cream, bacon, bagels, fried eggs, and donut holes. The phrases indicate a desire to gather dietary details, likely for health, fitness, or dietary planning purposes."
+    },
+    "145": {
+        "description": "This cluster is focused on seeking information about a specific dish at a particular restaurant. The intent behind the phrase is to gather insights or reviews about the quality or taste of the steamed fish served at Harbor Village. The user is likely trying to decide whether to order this dish or visit the restaurant based on its reputation for this specific menu item."
+    },
+    "87": {
+        "description": "This cluster is focused on seeking information about a specific dining experience. The intent behind the phrase is to gather opinions or reviews about the quality of dim sum at a particular restaurant called Legend. The user is looking to assess the culinary experience offered by this establishment, specifically in regards to their dim sum."
+    },
+    "74": {
+        "description": "This cluster contains inquiries related to banking routing numbers. The intent behind these phrases is to seek assistance in identifying or locating the correct routing number for various banks or specific accounts. Users are looking for guidance on determining the routing number for different financial institutions, including Chase, Wells Fargo, Ally, and Bank of America, as well as for particular types of accounts like premium checking. The overall goal is to obtain the necessary routing information to facilitate banking transactions."
+    },
+    "134": {
+        "description": "This cluster is focused on managing and scheduling meetings. The intent behind these phrases is to organize, plan, and retrieve information about meetings and appointments. The user is looking to perform various tasks related to their calendar and meeting logistics, such as checking their schedule, booking meeting rooms, and arranging meetings with specific individuals. The phrases indicate a need for assistance with both understanding the current meeting schedule and making new arrangements for future meetings. The cluster highlights the user's interest in efficient meeting management and coordination."
+    },
+    "104": {
+        "description": "This cluster pertains to inquiries about electrical outlets and plug types in various countries. The intent behind these phrases is to gather information about the specific kinds of electrical plugs and sockets used in different nations. Users are seeking to understand the electrical standards and requirements for various international locations, likely to ensure they have the correct adapters or equipment for travel or international electrical compatibility. The cluster reflects a practical need for international electrical preparedness."
+    },
+    "114": {
+        "description": "This cluster contains inquiries related to electrical equipment compatibility for travel. The intent behind the phrase is to seek information about the appropriate type of electrical socket converters or adapters needed for a specific region, in this case, Africa. The user is looking to ensure that their electronic devices can be used safely and effectively while traveling by obtaining the correct equipment to match the local power outlets."
+    },
+    "60": {
+        "description": "This cluster revolves around adjustments to audio volume and voice modes. The phrases convey the user's desire to change the loudness or softness of sound output or to switch between different voice modes. The intent is to control the audio settings to either increase or decrease the volume, or to toggle between normal and whisper modes for more discreet or louder communication. The user is seeking to personalize their audio experience based on their current needs and preferences."
+    },
+    "2": {
+        "description": "This cluster revolves around the theme of order status and delivery. The phrases indicate a user's interest in knowing whether their ordered items have reached their destination or when they can expect them to arrive. The intent is to track the progress of an order, confirm its delivery, or inquire about the estimated arrival time. Additionally, one phrase expresses a need to place a new order due to a lack of a specific item, suggesting a secondary intent of reordering or replenishing supplies. Overall, the cluster is centered on the logistics and timing of product delivery."
+    },
+    "55": {
+        "description": "This cluster contains expressions of farewell. The intent behind these phrases is to convey a casual and friendly goodbye. The user is signaling their departure or the end of a conversation in an informal and cheerful manner. The phrases indicate a positive and lighthearted way of saying goodbye to someone."
+    },
+    "8": {
+        "description": "This cluster represents phrases related to concluding a conversation or interaction on a positive note. The main topics include expressions of gratitude, pleasantries, and farewells. The intent behind these phrases is to politely and warmly end a conversation, expressing satisfaction or appreciation for the interaction. The user aims to convey a sense of closure and goodwill, often including a polite sign-off or acknowledgment of the conversation's positive nature."
+    },
+    "33": {
+        "description": "This cluster contains requests related to converting or understanding measurements and units of volume. The intent behind these phrases is to seek specific information about how different units of volume relate to each other. The user is looking to convert or compare various measurements, such as teaspoons to ounces, cups to liters, tablespoons to cups, milliliters to gallons, and pints to quarts. The goal is to gain clarity on the equivalencies between these units for practical purposes, such as cooking, baking, or other activities that require precise measurements."
+    },
+    "23": {
+        "description": "This cluster represents inquiries related to weather information. The main topics include current weather conditions, temperature details, and future forecasts. The intent behind these phrases is to seek meteorological data for immediate use or future planning. Users are looking to gain insights into the weather for the present day as well as upcoming days, demonstrating a need for both immediate and predictive weather updates."
+    },
+    "96": {
+        "description": "This cluster contains requests related to unit conversions, specifically for weight measurements. The intent behind these phrases is to seek assistance in transforming weight values from one unit to another. The user is looking to convert kilograms into smaller units like milligrams or different units like pounds to understand the equivalent weight in those measurements. The phrases indicate a need for practical tools or information to perform these conversions accurately."
+    },
+    "129": {
+        "description": "This cluster revolves around ensuring the security of doors. The intent behind these phrases is to guarantee that all doors are fastened and secure. The user is aiming to verify or initiate the locking mechanism of the doors to safeguard a particular space or area. The phrases indicate a desire for safety and protection by making sure that all entries are securely locked."
+    },
+    "9": {
+        "description": "This cluster represents requests related to location sharing and obtaining current location information. The intent behind these phrases is to either communicate the user's present address or GPS coordinates to others or to inquire about their own current location. The user is seeking to distribute their positional data to specific individuals, such as Jason, Stephanie, Steve, and Roger, or to simply know where they are situated at the moment. The overall purpose is to facilitate the exchange of location-based information with specified recipients or to gain awareness of one's own whereabouts."
+    },
+    "97": {
+        "description": "This cluster contains a directive related to answering questions. The intent behind the phrase is to ensure that a comprehensive response is provided, covering all aspects or parts of a query. The user is emphasizing the need for completeness and thoroughness in the information given."
+    },
+    "106": {
+        "description": "This cluster contains phrases related to the act of discarding or removing something. The intent behind these phrases is to express the desire to get rid of or dispose of items that are no longer needed or wanted. The user is looking to eliminate unwanted materials or waste."
+    },
+    "125": {
+        "description": "This cluster pertains to travel requirements and international visa regulations. The intent behind these phrases is to seek clarification on whether a visa is necessary for traveling to specific countries. Users are looking for guidance on the entry requirements and visa policies for different international destinations. The main topic revolves around understanding the documentation needed for travel, specifically focusing on visa requirements for countries like China, Switzerland, Canada, and Italy."
+    },
+    "103": {
+        "description": "This cluster relates to travel health precautions, specifically concerning vaccination requirements. The intent behind these phrases is to determine if any immunizations or vaccinations are necessary before visiting certain destinations. The user is seeking guidance on health preparations, such as whether to get vaccinated, before traveling to specific locations around the world. The phrases indicate a clear interest in ensuring health safety and understanding regional medical entry requirements."
+    },
+    "124": {
+        "description": "This cluster contains requests for directions to various locations using specific modes of transportation. The intent behind these phrases is to seek guidance on navigating to different destinations either by walking or taking the bus. The users are looking for detailed instructions or routes to reach points of interest such as a bus stop, movie theater, a city, or a cultural center. The phrases indicate a need for clear, step-by-step directions to facilitate travel planning."
+    },
+    "36": {
+        "description": "This cluster is focused on inquiries about traffic conditions and navigation. The main topics involve seeking real-time or expected traffic information for various destinations, including work, downtown areas, and airports. The intent behind these phrases is to gather details about current or anticipated traffic situations to plan or adjust travel routes effectively. Additionally, there is a request for navigational assistance to locate the nearest airport from a specific location. Overall, the user is aiming to optimize their travel experience by understanding traffic patterns and directions."
+    },
+    "3": {
+        "description": "This cluster represents inquiries and commands related to shopping and retail services. The main topics include locating nearby stores, managing payments for credit cards, and ordering gift cards. The intent behind these phrases is to obtain information about store locations, understand financial obligations, and initiate the purchase of specific gift cards. The user is seeking to interact with various retail services, from finding physical stores to handling online purchases and financial details."
+    },
+    "93": {
+        "description": "This cluster represents informal greetings or casual ways to start a conversation. The intent behind the phrase is to initiate a relaxed, friendly exchange. The user is seeking to acknowledge someone else's presence or to begin an interaction in a laid-back manner. The cluster is characterized by a colloquial and familiar tone, often used among acquaintances or peers."
+    },
+    "123": {
+        "description": "This cluster represents requests related to restoring default settings. The intent behind these phrases is to express the user's wish to return a device or system to its initial configuration. The user is looking to reverse any changes or customizations that have been made, aiming to revert the system to its original, out-of-the-box state. The phrases convey a clear desire to initiate a reset to the standard or factory settings."
+    },
+    "122": {
+        "description": "This cluster represents inquiries about personal interests and leisure activities. The main topics revolve around understanding how someone spends their free time and what they enjoy doing. The intent behind these phrases is to learn more about a person's hobbies, preferences, and how they engage in recreational activities. The user is seeking to understand the other person's enjoyable pastimes and possibly connect on a personal level through shared interests."
+    },
+    "89": {
+        "description": "This cluster represents expressions of discontent or criticism directed towards an individual named Carl. The main topic revolves around communicating a negative sentiment to Carl. The intent behind these phrases is to convey a strong disapproval or dissatisfaction with Carl's behavior or character. The user aims to express their opinion clearly and directly, using various ways to instruct or request that a message be sent to Carl reflecting their critical viewpoint."
+    },
+    "80": {
+        "description": "This cluster revolves around the theme of determining the nature of the responder, specifically whether the responder is a human or an automated system. The intent behind these phrases is to ascertain the identity of the entity they are interacting with. Users are seeking clarification on whether their queries are being handled by a real person or an artificial intelligence. The underlying curiosity is about the authenticity and type of interaction they are engaged in, wanting to distinguish between human and AI responses."
+    },
+    "148": {
+        "description": "This cluster contains inquiries related to checking the fuel level in a vehicle. The intent behind these phrases is to determine the amount of fuel remaining in the tank. The user is seeking to assess the current status of their vehicle's fuel supply through different variations of the same query."
+    },
+    "52": {
+        "description": "This cluster represents requests related to managing and updating a playlist. The intent behind this phrase is to modify a specific playlist by adding a particular song to it. The user is seeking to customize their playlist for a designated week by including a specific track, demonstrating an interest in organizing their music collection."
+    },
+    "81": {
+        "description": "This cluster is focused on music and playlist management. The intent behind the phrase is to modify or update a personalized workout playlist. The user is expressing a desire to include a specific song, \"Welcome to the Jungle,\" into their exercise music collection. The main topic revolves around customizing a playlist to enhance the workout experience with preferred musical choices."
+    },
+    "46": {
+        "description": "This cluster represents a clear interest in humor and comedic content. The main topic revolves around requests for jokes or funny narrations. The intent behind these phrases is to seek entertainment and amusement through humorous stories or jokes. The user is expressing a desire to be cheered up or entertained with something witty and lighthearted. Additionally, there is a specific interest in jokes related to toddlers, indicating a preference for a particular type of humor. Overall, the cluster reflects a playful and light-hearted mood, with the user looking for a fun and enjoyable experience."
+    },
+    "139": {
+        "description": "This cluster represents inquiries related to dealing with a dead car battery. The main topics include seeking assistance and instructions for jump-starting a vehicle. The intent behind these phrases is to find solutions for reviving a dead car battery and getting the car started again. Users are looking for guidance on the process of jump-starting, indicating they are experiencing issues with their car battery and need immediate help to resolve it."
+    },
+    "108": {
+        "description": "This cluster contains inquiries related to pricing and initial costs. The intent behind this phrase is to seek information about the starting price or baseline cost of a service or product. The user is trying to understand the minimum amount they would need to pay to begin using or purchasing something."
+    },
+    "91": {
+        "description": "This cluster contains requests related to acquiring a specific product, namely shoes. The intent behind these phrases is to express a desire to purchase a particular item, the Kyrie 4s. The user is asking for assistance in obtaining this product through different phrasing, indicating a clear interest in buying these shoes."
+    },
+    "146": {
+        "description": "This cluster focuses on inquiries about travel or commuting information. The intent behind the phrase is to seek details about the user's regular journey, likely from one specific location to another. The user is looking to understand the current conditions or route specifics of their commute. This could include information about traffic, distance, time, or any disruptions along the way. The goal is to be informed about the commuting process to plan or adjust travel accordingly."
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "method": "kmeans_baseline",
+  "n_clusters": 490,
+  "train_metrics": {
+    "macro_precision": 0.6227197852558868,
+    "macro_recall": 0.7656500963383528,
+    "macro_f1": 0.6868277249366489,
+    "micro_precision": 0.6436,
+    "micro_recall": 0.5076,
+    "micro_f1": 0.5675666435024322,
+    "pair_precision": 0.589860675090159,
+    "pair_recall": 0.13675599266143343,
+    "pair_f1": 0.22203449420864504,
+    "avg_f1": 0.49214295421590865
+  },
+  "test_metrics": {
+    "macro_precision": 0.6818151150560939,
+    "macro_recall": 0.7597709487174376,
+    "macro_f1": 0.7186852451390472,
+    "micro_precision": 0.487,
+    "micro_recall": 0.594,
+    "micro_f1": 0.5352044403330249,
+    "pair_precision": 0.19988198849387814,
+    "pair_recall": 0.3222354340071344,
+    "pair_f1": 0.2467225054624909,
+    "avg_f1": 0.5002040636448543
+  }
+}

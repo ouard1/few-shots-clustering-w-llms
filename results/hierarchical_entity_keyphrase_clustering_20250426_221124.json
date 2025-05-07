@@ -1,0 +1,29 @@
+{
+  "method": "hierarchical_entity_keyphrase_clustering",
+  "n_coarse_clusters": 22,
+  "n_fine_clusters": 490,
+  "train_metrics": {
+    "macro_precision": 0.6284082468383646,
+    "macro_recall": 0.6961584807365455,
+    "macro_f1": 0.6605506861889237,
+    "micro_precision": 0.6322,
+    "micro_recall": 0.459,
+    "micro_f1": 0.5318544721407624,
+    "pair_precision": 0.5574995551865252,
+    "pair_recall": 0.11308610785286775,
+    "pair_f1": 0.18803102511914463,
+    "avg_f1": 0.4601453944829436
+  },
+  "test_metrics": {
+    "macro_precision": 0.7020294897645755,
+    "macro_recall": 0.7379194849585557,
+    "macro_f1": 0.7195272174312989,
+    "micro_precision": 0.485,
+    "micro_recall": 0.573,
+    "micro_f1": 0.5253402646502836,
+    "pair_precision": 0.18359435571406418,
+    "pair_recall": 0.28156956004756245,
+    "pair_f1": 0.2222639384268819,
+    "avg_f1": 0.4890438068361547
+  }
+}

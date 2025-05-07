@@ -1,0 +1,15 @@
+{
+  "method": "hierarchical_keyphrase_clustering",
+  "n_coarse_clusters": 15,
+  "n_fine_clusters": 77,
+  "train_metrics": {
+    "accuracy": 0.6506666666666666,
+    "nmi": 0.8255253789761718,
+    "ari": 0.5618240982762954
+  },
+  "test_metrics": {
+    "accuracy": 0.7792207792207793,
+    "nmi": 0.9344986105770174,
+    "ari": 0.5796474386059797
+  }
+}
