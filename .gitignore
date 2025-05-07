@@ -4,6 +4,12 @@ datasets/opiec/OPIEC59k_test
 datasets/reverb/reverb45k_change_test_read
 datasets/reverb/reverb45k_valid
 
+# Git LFS missing files
+datasets/reverb45k/reverb45k_valid.txt
+datasets/reverb45k/gold_dataset/cleantesttriple.txt
+datasets/reverb45k/gold_dataset/ckbentid.txt
+datasets/reverb45k/reverb45k_test.txt
+
 # Python
 __pycache__/
 *.py[cod]
