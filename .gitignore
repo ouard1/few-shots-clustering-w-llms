@@ -7,8 +7,11 @@ datasets/reverb/reverb45k_valid
 # Git LFS missing files
 datasets/reverb45k/reverb45k_valid.txt
 datasets/reverb45k/gold_dataset/cleantesttriple.txt
+text_clustering-clinc/dataset/clinc/data/all_wiki_sents.txt
 datasets/reverb45k/gold_dataset/ckbentid.txt
 datasets/reverb45k/reverb45k_test.txt
+entity_canonicalization-reverb/data/reverb45k/reverb45k_valid.txt
+entity_canonicalization-reverb/data/reverb45k/reverb45k_test.txt
 
 # Python
 __pycache__/
